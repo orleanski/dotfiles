@@ -1,8 +1,8 @@
 # dotfiles
 
-An attempt to follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in $XDG_CONFIG_HOME.
+An attempt to follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in ``$XDG_CONFIG_HOME``.
 
-A list of config files will grow with time.
+A list of config files will grow with time. Also will reflect changes in system wide files (from ``/etc/`` dir)
 
 ## Makefile
 This is my memory aid, I'm going to add all of the config bootstapping in to the makefile snippet
@@ -33,7 +33,7 @@ The ``Makefile`` will be staying ``$HOME`` and perhaps in ``/etc/skel/``
 ## Brand new with no repo
 * Initialize a new repository
 ``# yadm init``
-* Start adding files to back up ``yadm add path\config``
+* Start choosing files for back up ``yadm add path/configrc``
 
 
 ### Errors
