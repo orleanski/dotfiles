@@ -23,13 +23,16 @@ The ``Makefile`` will be staying ``$HOME`` and perhaps in ``/etc/skel/``
 
 # YADM
 [yadm](https://yadm.io/) is used to backup and restore config files. Switched to the master branch, clone from main branch on clean system causes hiccups
+## Brand new with existing repo
 * For fresh [gentoo](gentoo.org) please install yadm
 ``# emerge -vq yadm``
-* Initialize a new repository
-``# yadm init``
-
 * Clone an existing repository
 ``# yadm clone https://github.com/dmitri-o/dotfiles.git``
+
+## Brand new with no repo
+* Initialize a new repository
+``# yadm init``
+* Start adding files to back up ``yadm add path\config``
 
 
 ### Errors
