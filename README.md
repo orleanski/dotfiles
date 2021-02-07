@@ -32,7 +32,7 @@ Set default branch main for git init: ```git config --global init.defaultBranch 
 * Terminal
   * bash
   * tmux
-  * vim / neovim
+  * ~~vim~~ / neovim
   * app-misc/mc
   * htop
 * X11
