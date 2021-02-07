@@ -1,7 +1,8 @@
 # dotfiles
-A few config files backed up here.
 
-__Applications should follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in $XDG_CONFIG_HOME.__
+An attempt to follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in $XDG_CONFIG_HOME.
+
+A list of config files will grow with time.
 
 ## Makefile
 This is my memory aid, I'm going to add all of the config bootstapping in to the makefile snippet
