@@ -1,9 +1,10 @@
-# dotfiles
-config files
+# dotfiles #
+A few config files backed up here.
 
-__Dotfiles should be XDG-compliant and organized. I use [yadm](https://yadm.io/) to manage then.__
+__Applications should follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in $XDG_CONFIG_HOME.__
+I use [yadm](https://yadm.io/) to backup and restore them.
 
-## tldr YADM
+## tl;dr YADM
 
 Insall yadm in Gentoo ```emerge -vq yadm```
 
