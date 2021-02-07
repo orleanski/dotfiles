@@ -30,3 +30,13 @@ The ``Makefile`` will be staying ``$HOME`` and perhaps in ``/etc/skel/``
 
 * Clone an existing repository
 ``# yadm clone https://github.com/dmitri-o/dotfiles.git``
+
+
+### Errors
+When cloning
+* If you encounter any error when cloning, run
+``yadm stash``
+* Then reclone with
+``# yadm clone -f https://github.com/dmitri-o/dotfiles.git``
+
+Please report any issues you have [here](https://github.com/dmitri-o/dotfiles/issues)
