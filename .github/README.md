@@ -7,7 +7,16 @@ A list of config files will grow with time. Also will reflect changes in system 
 ## Makefile
 This is my memory aid, I'm going to add all of the config bootstapping in to the makefile snippet
 
-The ``Makefile`` will be staying ``$HOME`` and perhaps in ``/etc/skel/``
+The ``Makefile`` will be staying @ ``$HOME``
+
+### TODO
+I am thinking to utilize Makefile to make bootstrapping with yadm so it will be 
+
+```
+wget https://raw.githubusercontent.com/dmitri-o/dotfiles/master/Makefile
+
+make homedir
+```
 
 
 ## Software in use and to backup their settings
@@ -21,26 +30,3 @@ The ``Makefile`` will be staying ``$HOME`` and perhaps in ``/etc/skel/``
   * htop
 * X11
    * allacritty
-
-# YADM
-[yadm](https://yadm.io/) is used to backup and restore config files. Switched to the master branch, clone from main branch on clean system causes hiccups
-## Brand new with existing repo
-* For fresh [gentoo](gentoo.org) please install yadm
-``# emerge -vq yadm``
-* Clone an existing repository
-``# yadm clone https://github.com/dmitri-o/dotfiles.git``
-
-## Brand new with no repo
-* Initialize a new repository
-``# yadm init``
-* Start choosing files for back up ``yadm add path/configrc``
-
-
-### Errors
-When cloning
-* If you encounter any error when cloning, run
-``yadm stash``
-* Then reclone with
-``# yadm clone -f https://github.com/dmitri-o/dotfiles.git``
-
-Please report any issues you have [here](https://github.com/dmitri-o/dotfiles/issues)
