@@ -33,3 +33,5 @@ make homedir
 - [ ] X11
 - [ ] allacritty
 - [ ] user-dirs
+
+https://img.shields.io/github/license/dmitri-o/dotfiles
