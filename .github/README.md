@@ -10,7 +10,7 @@ This is my memory aid.
 The ``Makefile`` will be staying @ ``$HOME``
 
 ### TODO
-I'm going to add all of the config bootstapping in to the makefile snippet
+I'm going to add all of the config bootstapping in to the [makefile snippet](https://github.com/dmitri-o/dotfiles/issues/1#issue-803264396)
 to bootstrap with yadm, so it will be 
 
 ```
