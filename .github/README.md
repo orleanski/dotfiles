@@ -1,3 +1,4 @@
+![License:MIT](https://img.shields.io/github/license/dmitri-o/dotfiles)
 # dotfiles
 
 An attempt to follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in ``$XDG_CONFIG_HOME``.
@@ -34,4 +35,5 @@ make homedir
 - [ ] allacritty
 - [ ] user-dirs
 
-https://img.shields.io/github/license/dmitri-o/dotfiles
+* ![Open issues](https://img.shields.io/github/issues-raw/dmitri-o/dotfiles?style=plastic)
+* ![GitHub last commit](https://img.shields.io/github/last-commit/dmitri-o/dotfiles)
