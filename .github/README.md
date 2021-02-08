@@ -20,7 +20,8 @@ make homedir
 ```
 
 
-## Software in use and to backup their settings
+## configs for:
+
 - [ ] Makefile
 - [ ] bash
 - [ ] tmux
@@ -28,5 +29,7 @@ make homedir
 - [ ] app-misc/mc
 - [ ] git
 - [x] htop
+- [x] neofetch
 - [ ] X11
 - [ ] allacritty
+- [ ] user-dirs
