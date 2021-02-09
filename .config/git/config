@@ -1,0 +1,16 @@
+[init]
+	defaultBranch = master
+
+[user]
+	email = orleanski@gmail.com
+	name = Dmitri
+[color]
+	ui = auto
+[core]
+	exludesfile = /root/.config/git/gitignore
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
