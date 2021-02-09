@@ -12,7 +12,7 @@ The ``Makefile`` will be staying @ ``$HOME``
 
 ### TODO
 I'm going to add all of the config bootstapping in to the [makefile snippet](https://github.com/dmitri-o/dotfiles/issues/1#issue-803264396)
-to bootstrap with yadm, so it will be 
+to bootstrap with yadm, so it will be
 
 ```
 wget https://raw.githubusercontent.com/dmitri-o/dotfiles/master/Makefile
@@ -26,14 +26,14 @@ make homedir
 - [ ] Makefile
 - [ ] bash
 - [ ] tmux
-- [ ] ~~vim~~ / neovim
+- [x] vim / neovim
 - [ ] app-misc/mc
-- [ ] git
+- [x] git
 - [x] htop
 - [x] neofetch
 - [ ] X11
 - [ ] allacritty
-- [ ] user-dirs
+- [x] user-dirs
 
 * ![Open issues](https://img.shields.io/github/issues-raw/dmitri-o/dotfiles?style=plastic)
 * ![GitHub last commit](https://img.shields.io/github/last-commit/dmitri-o/dotfiles)
