@@ -1,7 +1,7 @@
 ![License:MIT](https://img.shields.io/github/license/dmitri-o/dotfiles)
 # dotfiles
 
-An attempt to follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in ``$XDG_CONFIG_HOME``.
+An attempt to follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in ``${XDG_CONFIG_HOME}``.
 
 A list of config files will grow with time. Also will reflect changes in system wide files (from ``/etc/`` dir)
 
@@ -23,8 +23,9 @@ make homedir
 
 ## configs for:
 
+- [ ] /etc/profile.d/xdg.sh
 - [x] Makefile
-- [ ] bash
+- [x] bash
 - [x] tmux
 - [x] vim
 - [x] neovim
@@ -35,7 +36,7 @@ make homedir
 - [x] neofetch
 - [ ] X11
 - [ ] allacritty
-- [x] user-dirs
+- [x] user-dirs <- changes are made in /etc/xdg/user-dirs.defaults
 
 * ![Open issues](https://img.shields.io/github/issues-raw/dmitri-o/dotfiles?style=plastic)
 * ![GitHub last commit](https://img.shields.io/github/last-commit/dmitri-o/dotfiles)

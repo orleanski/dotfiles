@@ -1,0 +1,106 @@
+# /etc/skel/.bashrc
+#
+# This file is sourced by all *interactive* bash shells on startup,
+# including some apparently interactive shells such as scp and rcp
+# that can't tolerate any output.  So make sure this doesn't display
+# anything or bad things will happen !
+
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+
+# Put your fun stuff here.
+
+# TimeZone and Locale {{{
+# Define Time Zone BIOS clock set in UTC
+TZ='Pacific/Pago_Pago'; export TZ
+
+LANG='en_US.utf8'; export LANG
+#}}}
+# Aliases {{{
+alias tmux='tmux -2'
+alias nano='nano -w'
+alias l='ls -alhF --color --group-directories-first'
+alias lc='ls -ahF --color --group-directories-first'
+alias ll='ls -alhF --color | sort -r | less'
+alias l1='ls -a1 --color --group-directories-first'
+alias c='echo "==============================" && echo $TZ && date && echo "==============================" && cal -m -3'
+alias h='history'
+alias df='df -h'
+alias du='du -h'
+alias du1='du -h --max-depth 1'
+#}}}
+# History tuneup {{{
+export HISTFILE="$XDG_DATA_HOME"/bash/history
+export HISTCONTROL=ignoredups:erasedups
+export HISTTIMEFORMAT="%F %T "
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+#}}}
+# TMUX {{{
+if which tmux >/dev/null 2>&1; then
+    # if no session is started, start a new session
+    test -z ${TMUX} && tmux
+
+    # when quitting tmux, try to attach
+    while test -z ${TMUX}; do
+        tmux attach || break
+    done
+fi
+#}}}
+# PROMPT {{{
+#case $TERM in
+#xterm*|rxvt|urxvt|Eterm|eterm)
+#PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+#;;
+#screen)
+#PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+#;;
+#esac
+# If id command returns zero, youâve root access.
+if [ $(id -u) -eq 0 ];
+then # you are root, set red colour prompt
+  PS1="\\[$(tput setaf 1)\\]\\u @ \$(hostname -f):\\[$(tput sgr0)\\] \\w \n# "
+else # normal
+  PS1="[\\u@\\h:\\w] $ "
+fi
+#}}}
+# Apps {{{
+export VIMINIT="source ~/.config/vim/vimrc"
+export LESSHISTFILE=-												# No less history (~/.lesshst file)
+export GNUPGHOME="${XDG_CONFIG_HOME}"/gnupg
+export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
+#}}}
+## Console Settigs {{{
+## Mute console
+#set bell-style off
+#setterm -bfreq 0
+#}}}
+## fortune {{{
+# Some people don't like fortune. If you uncomment the following lines,
+# you will have a fortune each time you log in ;-)
+
+#if [ -x /usr/bin/fortune ] ; then
+#    echo
+#    /usr/bin/fortune
+#    echo
+#fi
+#}}}
+## Midnight Commander chdir enhancement {{{
+## allow mc to chdir to its latest working dir on exit
+##
+#. /usr/libexec/mc/mc.sh # or
+#if [ -f /usr/share/mc/mc.gentoo ] then
+#	. /usr/share/mc/mc.gentoo
+#fi
+#}}}
+## logout after 5 minutes of inactivity {{{
+#export TMOUT=300
+#}}}
