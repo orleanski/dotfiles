@@ -25,7 +25,7 @@ make homedir
 
 - [x] Makefile
 - [ ] bash
-- [ ] tmux
+- [x] tmux
 - [x] vim
 - [x] neovim
 - [ ] app-misc/mc
