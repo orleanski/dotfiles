@@ -20,7 +20,6 @@ fi
 # TimeZone and Locale {{{
 # Define Time Zone BIOS clock set in UTC
 TZ='Pacific/Pago_Pago'; export TZ
-
 LANG='en_US.utf8'; export LANG
 #}}}
 # Aliases {{{
@@ -37,14 +36,14 @@ alias du='du -h'
 alias du1='du -h --max-depth 1'
 #}}}
 # History tuneup {{{
-export HISTFILE="$XDG_DATA_HOME"/bash/history
+export HISTFILE=${XDG_DATA_HOME}/bash/history
 export HISTCONTROL=ignoredups:erasedups
 export HISTTIMEFORMAT="%F %T "
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
 PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 #}}}
-# TMUX {{{
+# TMUX autostart {{{
 if which tmux >/dev/null 2>&1; then
     # if no session is started, start a new session
     test -z ${TMUX} && tmux
@@ -56,15 +55,6 @@ if which tmux >/dev/null 2>&1; then
 fi
 #}}}
 # PROMPT {{{
-#case $TERM in
-#xterm*|rxvt|urxvt|Eterm|eterm)
-#PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
-#;;
-#screen)
-#PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
-#;;
-#esac
-# If id command returns zero, youâve root access.
 if [ $(id -u) -eq 0 ];
 then # you are root, set red colour prompt
   PS1="\\[$(tput setaf 1)\\]\\u @ \$(hostname -f):\\[$(tput sgr0)\\] \\w \n# "
@@ -73,10 +63,10 @@ else # normal
 fi
 #}}}
 # Apps {{{
-export VIMINIT="source ~/.config/vim/vimrc"
+export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
 export LESSHISTFILE=-												# No less history (~/.lesshst file)
-export GNUPGHOME="${XDG_CONFIG_HOME}"/gnupg
-export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
+export GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
+export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #}}}
 ## Console Settigs {{{
 ## Mute console
