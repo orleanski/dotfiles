@@ -2,12 +2,15 @@
 set nocompatible	" Set compatibility to Vim only.
 filetype off		" Helps force plug-ins to load correctly when it is turned back on below.
 " sourcing files
-set directory=~/.config/vim/vimtmp,.
-set directory=~/.config/vim/swap//,.		" OR set noswapfile
-set backupdir=~/.config/vim/backup//,.		" OR set nobackup
-set undodir=~/.config/vim/undo//,.			" OR set noundofile
-set viminfo='10,<100,:100,%,n~/.config/vim/.viminfo
-set runtimepath+=~/.config/vim,~/.config/vim/after
+"set directory=~/.config/vim/vimtmp,.
+set directory="$XDG_CONFIG_HOME"/vim/vimtmp,.
+set directory="$XDG_CONFIG_HOME"/vim/swap//,.		" OR set noswapfile
+set backupdir="$XDG_CONFIG_HOME"/vim/backup//,.		" OR set nobackup
+set undodir="$XDG_CONFIG_HOME"/vim/undo//,.			" OR set noundofile
+set viminfo='10,<100,:100,%,n"$XDG_CONFIG_HOME"/vim/.viminfo
+set runtimepath+="$XDG_CONFIG_HOME"/vim,"$XDG_CONFIG_HOME"/vim/after
+"" TODO so requires absolute path
+"so "$XDG_CONFIG_HOME"/vim/plugin/comments.vim
 so ~/.config/vim/plugin/comments.vim
 "so ~/.config/vim/colors/*.vim
 
