@@ -23,12 +23,14 @@ make homedir
 
 ## configs for:
 
-- [ ] Makefile
+- [x] Makefile
 - [ ] bash
 - [ ] tmux
-- [x] vim / neovim
+- [x] vim
+- [x] neovim
 - [ ] app-misc/mc
 - [x] git
+- [x] yadm
 - [x] htop
 - [x] neofetch
 - [ ] X11
