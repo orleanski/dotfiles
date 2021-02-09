@@ -3,7 +3,7 @@ set nocompatible	" Set compatibility to Vim only.
 filetype off		" Helps force plug-ins to load correctly when it is turned back on below.
 " sourcing files
 "set directory=~/.config/vim/vimtmp,.
-set directory=${XDG_CONFIG_HOMEi}/vim/vimtmp,.
+set directory=${XDG_CONFIG_HOME}/vim/vimtmp,.
 set directory=${XDG_CONFIG_HOME}/vim/swap//,.		" OR set noswapfile
 set backupdir=${XDG_CONFIG_HOME}/vim/backup//,.		" OR set nobackup
 set undodir=${XDG_CONFIG_HOME}/vim/undo//,.			" OR set noundofile
