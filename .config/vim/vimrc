@@ -3,15 +3,14 @@ set nocompatible	" Set compatibility to Vim only.
 filetype off		" Helps force plug-ins to load correctly when it is turned back on below.
 " sourcing files
 "set directory=~/.config/vim/vimtmp,.
-set directory="$XDG_CONFIG_HOME"/vim/vimtmp,.
-set directory="$XDG_CONFIG_HOME"/vim/swap//,.		" OR set noswapfile
-set backupdir="$XDG_CONFIG_HOME"/vim/backup//,.		" OR set nobackup
-set undodir="$XDG_CONFIG_HOME"/vim/undo//,.			" OR set noundofile
-set viminfo='10,<100,:100,%,n"$XDG_CONFIG_HOME"/vim/.viminfo
-set runtimepath+="$XDG_CONFIG_HOME"/vim,"$XDG_CONFIG_HOME"/vim/after
-"" TODO so requires absolute path
-"so "$XDG_CONFIG_HOME"/vim/plugin/comments.vim
-so ~/.config/vim/plugin/comments.vim
+set directory=${XDG_CONFIG_HOMEi}/vim/vimtmp,.
+set directory=${XDG_CONFIG_HOME}/vim/swap//,.		" OR set noswapfile
+set backupdir=${XDG_CONFIG_HOME}/vim/backup//,.		" OR set nobackup
+set undodir=${XDG_CONFIG_HOME}/vim/undo//,.			" OR set noundofile
+set viminfo='10,<100,:100,%,n${XDG_CONFIG_HOME}/vim/.viminfo
+set runtimepath+=${XDG_CONFIG_HOME}/vim,${XDG_CONFIG_HOME}/vim/after
+so ${XDG_CONFIG_HOME}/vim/plugin/comments.vim
+"so ~/.config/vim/plugin/comments.vim
 "so ~/.config/vim/colors/*.vim
 
 " Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data.
