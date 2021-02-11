@@ -34,6 +34,7 @@ alias h='history'
 alias df='df -h'
 alias du='du -h'
 alias du1='du -h --max-depth 1'
+alias mount='mount | column -t'
 #}}}
 # History tuneup {{{
 export HISTFILE=${XDG_DATA_HOME}/bash/history
@@ -94,3 +95,7 @@ export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 ## logout after 5 minutes of inactivity {{{
 #export TMOUT=300
 #}}}
+# Functions {{{
+# Create a directory and change into it
+mkcd () { mkdir -p "$@" && cd "$@"; }
+# }}}
