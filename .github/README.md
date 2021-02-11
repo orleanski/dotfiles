@@ -29,6 +29,7 @@ make homedir
 - [x] tmux
 - [x] vim
 - [x] neovim
+- [x] less
 - [ ] app-misc/mc
 - [x] git
 - [x] yadm
