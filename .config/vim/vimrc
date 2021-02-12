@@ -103,7 +103,12 @@ syntax enable
 
 " Visual mode highlighting
 :hi Visual term=reverse cterm=reverse guibg=LightGrey
+" clear highligts with screen redraw
 nnoremap <silent> <C-l> :let @/=""<CR>
+
+" use the_silver_searcher
+let g:ackprg = 'ag --vimgrep'
+
 "}}}
 " Folding {{{
 set foldenable          " enable folding
