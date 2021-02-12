@@ -39,9 +39,12 @@ alias mount='mount | column -t'
 # History tuneup {{{
 export HISTFILE=${XDG_DATA_HOME}/bash/history
 export HISTCONTROL=ignoredups:erasedups
+export HISTIGNORE="ls:ps:history"
 export HISTTIMEFORMAT="%F %T "
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
+export HISTSIZE=10000		# the number of commands to remember
+export HISTFILESIZE=10000	# the maximum number of lines
 PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 #}}}
 # TMUX autostart {{{
