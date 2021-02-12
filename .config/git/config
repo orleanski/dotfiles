@@ -80,9 +80,9 @@
 	#############
 	g = grep -p
 	#############
-	l = log --oneline
-	lg = log --oneline --graph --decorate
-	llg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lgp = log --color --graph --pretty=format:'%Cred%hCreset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lgp2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lgd = log --pretty=format:'%C(yellow bold)%h %C(cyan bold)%ad %C(green bold)%an %C(red bold)%D  %C(white)%s' --graph --abbrev-commit
 	#############
 	ls = ls-files
 	lsf = !git ls-files | grep -i
