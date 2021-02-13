@@ -71,7 +71,7 @@ export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
 #export LESSHISTFILE=-												# No less history (~/.lesshst file)
 # lesskey is binary file generated with lesskey from ~/.lesskey, then copy, also can be uses as /etc/sysless
 export LESSKEY="${XDG_CONFIG_HOME}/less/lesskey"
-export LESSHISTFILE="${XDG_CONFIG_HOME}/less/history"
+export LESSHISTFILE="${XDG_DATA_HOME}/less/history"
 export GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
 export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #}}}
