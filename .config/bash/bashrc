@@ -23,7 +23,7 @@ TZ='Pacific/Pago_Pago'; export TZ
 LANG='en_US.utf8'; export LANG
 #}}}
 # Aliases {{{
-alias tmux='tmux -2'
+alias tmux='tmux -2 -u'
 alias nano='nano -w'
 alias l='ls -alhF --color --group-directories-first'
 alias lc='ls -ahF --color --group-directories-first'
@@ -50,7 +50,7 @@ PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 # TMUX autostart {{{
 if which tmux >/dev/null 2>&1; then
     # if no session is started, start a new session
-    test -z ${TMUX} && tmux
+    test -z ${TMUX} && tmux -2 -u
 
     # when quitting tmux, try to attach
     while test -z ${TMUX}; do
@@ -102,6 +102,23 @@ export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #export TMOUT=300
 #}}}
 # Functions {{{
+
 # Create a directory and change into it
 mkcd () { mkdir -p "$@" && cd "$@"; }
+
+# type H and search word
+# replaced grep -> rg or ac (for ripgrep and the silver searcher)
+H() {
+    declare -A HMAP
+    while read line
+    do
+        INDEX=$(echo $line | cut -d' ' -f 1)
+        ENTRY=$(echo $line | cut -d' ' -f 2-)
+        HMAP[$ENTRY]=$INDEX
+    done < <(history | grep "$*" )
+    for ENTRY in "${!HMAP[@]}"
+    do
+        printf "%4s %s\n"  "${HMAP[$ENTRY]}" "$ENTRY"
+    done | sort -n
+}
 # }}}
