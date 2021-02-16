@@ -34,7 +34,7 @@ alias h='history'
 alias df='df -h'
 alias du='du -h'
 alias du1='du -h --max-depth 1'
-alias mount='mount | column -t'
+alias mountp='mount | column -t'
 #}}}
 # History tuneup {{{
 export HISTFILE=${XDG_DATA_HOME}/bash/history
