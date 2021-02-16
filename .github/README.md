@@ -15,7 +15,7 @@ The ``Makefile`` will be staying @ ``$HOME``
 
 ### TODO
 I'm going to add all of the config bootstapping in to the [makefile snippet](https://github.com/vyvox/dotfiles/issues/1#issue-803264396)
-to bootstrap with yadm, so it will be something like  [issue #1](https://github.com/vyvox/dotfiles/issues/1#issue-803264396)
+to bootstrap on fresh installation **WIP**
 
 ```
 wget zip-archive
