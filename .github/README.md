@@ -15,10 +15,10 @@ The ``Makefile`` will be staying @ ``$HOME``
 
 ### TODO
 I'm going to add all of the config bootstapping in to the [makefile snippet](https://github.com/vyvox/dotfiles/issues/1#issue-803264396)
-to bootstrap with yadm, so it will be [see #1] (https://github.com/vyvox/dotfiles/issues/1#issuecomment-778880212)
+to bootstrap with yadm, so it will be something like  #1
 
 ```
-wget archive
+wget zip-archive
 
 make homedir
 ```
@@ -26,7 +26,7 @@ make homedir
 
 ## configs for:
 
-- [x] Makefile#1
+- [x] Makefile #1
 - [x] .config/ag
 - [x] .config/bash
 - [x] .config/git
@@ -38,7 +38,7 @@ make homedir
 - [x] .config/vim
 - [x] .config/yadm
 - [x] .config/user-dirs <- changes are made in /etc/xdg/user-dirs.defaults
-- [ ] /etc/profile.d/xdg.sh#3
+- [ ] /etc/profile.d/xdg.sh #3
 - [ ] allacritty
 - [ ] app-misc/mc
 - [ ] X11
