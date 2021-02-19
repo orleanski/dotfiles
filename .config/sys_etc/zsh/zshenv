@@ -9,4 +9,4 @@ then
 fi
 
 source $ZDOTDIR/zshenv
-source $ZDOTDIR/zshrc
+
