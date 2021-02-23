@@ -48,6 +48,12 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s dirspell     # correct typos when tab-completing names
   shopt -s globstar     # enable **
 fi
+
+# change cursor shape or color to indicate vi mode in bash
+set -o vi								# switching to vi on ESC and back to edit by a
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
 # }}}
 # History tuneup {{{
 export HISTFILE=${XDG_DATA_HOME}/bash/history
