@@ -22,6 +22,10 @@ fi
 TZ='Pacific/Pago_Pago'; export TZ
 LANG='en_US.utf8'; export LANG
 #}}}
+# Check if interactive {{{
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+# }}}
 # Aliases {{{
 alias tmux='tmux -2 -u'
 alias nano='nano -w'
@@ -36,6 +40,15 @@ alias du='du -h'
 alias du1='du -h --max-depth 1'
 alias mountp='mount | column -t'
 #}}}
+# Bash options {{{
+shopt -s cdspell			# correct minor spelling errors in cd
+# these options are only availabe in Bash4
+if [[ $BASH_VERSION == 4* ]] ; then
+  shopt -s autocd       # type 'dir' instead 'cd dir'
+  shopt -s dirspell     # correct typos when tab-completing names
+  shopt -s globstar     # enable **
+fi
+# }}}
 # History tuneup {{{
 export HISTFILE=${XDG_DATA_HOME}/bash/history
 export HISTCONTROL=ignoredups:erasedups
