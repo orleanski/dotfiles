@@ -1,7 +1,7 @@
-
-# dotfiles  ![License:MIT](https://img.shields.io/github/license/vyvox/dotfiles)
-* ![Open issues](https://img.shields.io/github/issues-raw/vyvox/dotfiles?style=plastic)
+# dotfiles
+* ![License:MIT](https://img.shields.io/github/license/vyvox/dotfiles)
 * ![GitHub last commit](https://img.shields.io/github/last-commit/vyvox/dotfiles)
+* ![Open issues](https://img.shields.io/github/issues-raw/vyvox/dotfiles?style=plastic)
 
 
 An attempt to follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in ``${XDG_CONFIG_HOME}``.
@@ -39,7 +39,7 @@ make homedir
 - [x] .config/vim
 - [x] .config/yadm
 - [x] .config/user-dirs <- changes are made in /etc/xdg/user-dirs.defaults
+- [ ] .config/allacritty
 - [ ] /etc/profile.d/xdg.sh [see issue #3](https://github.com/vyvox/dotfiles/issues/3#issue-806949413)
-- [ ] allacritty
 - [ ] app-misc/mc
 - [ ] X11
