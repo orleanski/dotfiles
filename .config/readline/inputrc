@@ -1,5 +1,7 @@
-set editing-mode vi
-set keymap vi
+set editing-mode vi								# Use vi line editing commands.
+# show (ins) or (cmd) in front of the prompt, comments on the same line will make it dissapear
+set show-mode-in-prompt on
+set keymap vi									# Use vi keymap.
 $if mode=vi
     set keymap vi-insert
     Control-l clear-screen
@@ -15,6 +17,7 @@ set colored-completion-prefix on 				# Display the common prefix using a differe
 set colored-stats on							# Display completions using different colors to indicate their file type
 set completion-query-items 10					# Ask for confirmation if the number of possible completions is greater than...
 set skip-completed-text on 						# Skip already completed text
+set completion-map-case on
 
 ## Search in history
 # Match the current input in history when pressing UP or DOWN
