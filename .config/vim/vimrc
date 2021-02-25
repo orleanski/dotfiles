@@ -12,7 +12,6 @@ set runtimepath+=${XDG_CONFIG_HOME}/vim,${XDG_CONFIG_HOME}/vim/after
 "so ${XDG_CONFIG_HOME}/vim/plugin/comments.vim
 "so ~/.config/vim/plugin/comments.vim
 "so ~/.config/vim/colors/*.vim
-let g:tex_flavor = "latex"
 " Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data.
 " Useful for copying large amounts of data between files.
 "set viminfo+=n$HOME/.config/vim/.viminfo
@@ -122,6 +121,9 @@ set foldlevel=0
 set modelines=0			" Don't use vim settings from the bottom of the file - security concern
 "}}}
 " MISC {{{
+
+let g:tex_flavor = "latex"
+
 " enable backspace key
 set t_kb=
 fixdel
