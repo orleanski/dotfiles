@@ -1,0 +1,26 @@
+set editing-mode vi
+set keymap vi
+$if mode=vi
+    set keymap vi-insert
+    Control-l clear-screen
+$endif
+set expand-tilde on
+set bell-style none								# no sounds
+
+## Completion options
+set completion-ignore-case on					# Ignore case for autocompletion
+set show-all-if-ambiguous on					# Avoid using TAB twice to show the matches
+set completion-display-width 0 					# Display one match per line
+set colored-completion-prefix on 				# Display the common prefix using a different color
+set colored-stats on							# Display completions using different colors to indicate their file type
+set completion-query-items 10					# Ask for confirmation if the number of possible completions is greater than...
+set skip-completed-text on 						# Skip already completed text
+
+## Search in history
+# Match the current input in history when pressing UP or DOWN
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\C-P": history-search-backward
+"\C-N": history-search-forward
+
+set echo-control-characters off 				# Do not display ^C
