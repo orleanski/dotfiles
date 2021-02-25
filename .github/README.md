@@ -31,6 +31,7 @@ make homedir
 - [x] .config/bash
 - [x] .config/git
 - [x] .config/htop
+- [x] .config/readline
 - [x] .config/less
 - [x] .config/neofetch
 - [x] .config/neovim
