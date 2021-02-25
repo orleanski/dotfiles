@@ -36,6 +36,7 @@ set wrapmargin=0
 set wrap		" wrap visually
 set linebreak
 set nolist		" list diables linebreak
+set notitle     " set no title
 set ignorecase		" ignore case when searching
 "set noignorecase	" don't ignore case
 set noro			" default to not read only in vimdiff for git difftool
