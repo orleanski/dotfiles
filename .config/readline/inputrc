@@ -1,23 +1,81 @@
-set editing-mode vi								# Use vi line editing commands.
+# comments on the same line causes malfunction of the options
+# so comments are on a separate lines.
+
+
+# Use vi line editing commands.
+set editing-mode vi
+
 # show (ins) or (cmd) in front of the prompt, comments on the same line will make it dissapear
 set show-mode-in-prompt on
-set keymap vi									# Use vi keymap.
+
+# Use vi keymap.
+set keymap vi
+
 $if mode=vi
     set keymap vi-insert
     Control-l clear-screen
 $endif
+
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+
 set expand-tilde on
-set bell-style none								# no sounds
+
+# no sounds
+set bell-style none
 
 ## Completion options
-set completion-ignore-case on					# Ignore case for autocompletion
-set show-all-if-ambiguous on					# Avoid using TAB twice to show the matches
-set completion-display-width 0 					# Display one match per line
-set colored-completion-prefix on 				# Display the common prefix using a different color
-set colored-stats on							# Display completions using different colors to indicate their file type
-set completion-query-items 10					# Ask for confirmation if the number of possible completions is greater than...
-set skip-completed-text on 						# Skip already completed text
+
+# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+set match-hidden-files off
+
+# Show all autocomplete results at once
+set page-completions off
+
+# Ignore case for autocompletion
+set completion-ignore-case on
+
+# Avoid using TAB twice to show the matches
+set show-all-if-ambiguous on
+
+# Display one match per line
+set completion-display-width 0
+
+# Display the common prefix using a different color
+set colored-completion-prefix on
+
+# Show extra file information when completing, like `ls -F` does
+set visible-stats on
+
+# Display completions using different colors to indicate their file type
+set colored-stats on
+
+
+# Ask for confirmation if the number of possible completions is greater than...
+set completion-query-items 10
+
+# Skip already completed text
+# Be more intelligent when autocompleting by also looking at the text after
+# the cursor. For example, when the current line is "cd ~/src/mozil", and
+# the cursor is on the "z", pressing Tab will not autocomplete it to "cd
+# ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
+# Readline used by Bash 4.)
+set skip-completed-text on
+
+
 set completion-map-case on
+
+# When tab-completing, show a menu.
+TAB: menu-complete
+"\e[Z": menu-complete-backward
+
+# Use Alt/Meta + Delete to delete the preceding word
+"\e[3;3~": kill-word
 
 ## Search in history
 # Match the current input in history when pressing UP or DOWN
@@ -26,4 +84,5 @@ set completion-map-case on
 "\C-P": history-search-backward
 "\C-N": history-search-forward
 
-set echo-control-characters off 				# Do not display ^C
+# Do not display ^C
+set echo-control-characters off
