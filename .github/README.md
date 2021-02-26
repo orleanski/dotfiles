@@ -14,5 +14,5 @@ This is my memory aid.
 The ``Makefile`` will be staying @ ``$HOME``
 
 ## TODO
-see [TODO](TODO.md)
+The progress is reflected in my [TODO](TODO.md) list
 
