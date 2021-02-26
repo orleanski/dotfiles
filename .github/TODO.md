@@ -20,7 +20,7 @@ make homedir
 ```
 
 ## DONE
-### configs are ready to be used for
+### configs are ready to be used and some changes are still can occur
 
 - [x] .config/ag
 - [x] .config/bash
