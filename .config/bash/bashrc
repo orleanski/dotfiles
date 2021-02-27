@@ -6,14 +6,15 @@
 # anything or bad things will happen !
 
 
-# Test for an interactive shell.  There is no need to set anything
+# Test for an interactive shell. {{{
+# There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
 if [[ $- != *i* ]] ; then
 	# Shell is non-interactive.  Be done now!
 	return
 fi
-
+# }}}
 
 # Put your fun stuff here.
 
@@ -56,6 +57,8 @@ set vi-cmd-mode-string "\1\e[2 q\2"
 set vi-ins-mode-string "\1\e[6 q\2"
 # }}}
 # History tuneup {{{
+# check if directory doesn't exist, then create it
+[[ -d ${XDG_DATA_HOME}/bash ]] || mkdir -p ${XDG_DATA_HOME}/bash
 export HISTFILE=${XDG_DATA_HOME}/bash/history
 export HISTCONTROL=ignoredups:erasedups
 export HISTIGNORE="ls:ps:history"
@@ -94,13 +97,20 @@ fi
 #}}}
 # Apps {{{
 export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
+
 #export LESSHISTFILE=-												# No less history (~/.lesshst file)
 # lesskey is binary file generated with lesskey from ~/.lesskey, then copy, also can be uses as /etc/sysless
 export LESSKEY="${XDG_CONFIG_HOME}/less/lesskey"
+
+# check if directory doesn't exist, then create it
+[[ -d ${XDG_DATA_HOME}/less ]] || mkdir -p ${XDG_DATA_HOME}/less
 export LESSHISTFILE="${XDG_DATA_HOME}/less/history"
+
 export GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
-export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
+
 export INPUTRC=${XDG_CONFIG_HOME}/readline/inputrc
+
+export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #}}}
 ## Console Settigs {{{
 ## Mute console
