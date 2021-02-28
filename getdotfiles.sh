@@ -1,6 +1,6 @@
 #!/bin/sh
 # Usage:
-#        curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh
+#        curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh && source .config/bash/bashrc
 
 echo "       Installing dotfiles, it will be quick!"
 echo ""
@@ -23,7 +23,3 @@ echo "Checking and removing .bash_history"
 [[ -f .bash_history ]] && rm .bash_history
 echo ""
 echo "       Done "
-echo " To reinit shell please do it manually"
-echo " source .config/bash/bashrc"
-echo " or "
-echo " You may want to logout and login back"
