@@ -6,6 +6,8 @@
 
 An attempt to follow [XDG specifications](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) and store config files in ``${XDG_CONFIG_HOME}``.
 
+I would like to keep my enviroment with minimal dependences, plugins and such, and keep well commented if possible.
+
 A list of config files will grow with time. Also I will include changes in system wide files (from ``/etc/`` dir)
 
 ## Makefile
