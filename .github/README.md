@@ -11,7 +11,7 @@ I would like to keep my enviroment with minimal dependences, plugins and such, a
 A list of config files will grow with time. Also I will include changes in system wide files (from ``/etc/`` dir)
 
 ## Installation via copy paste in the homedir
-``curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh``
+``curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh && source .config/bash/bashrc``
 
 ## Makefile
 This is my memory aid.
