@@ -25,3 +25,4 @@ echo "Reinit bash"
 source .config/bash/bashrc
 echo ""
 echo "       Done "
+echo " You may want to logout and login back"
