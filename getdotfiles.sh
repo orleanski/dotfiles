@@ -13,8 +13,6 @@ echo "Extracting only .config dir and subdirs ... see below"
 unzip master.zip 'dotfiles-master/.config/**/*' -d ./
 echo "Moving .config dir to the homedir"
 mv dotfiles-master/.config/ ./
-echo "source the new bashrc"
-source .config/bash/bashrc
 echo "Deleting unzipped dir"
 rmdir dotfiles-master/
 echo "Checking and removing master.zip"
@@ -23,5 +21,7 @@ echo "Checking and removing .wget-hsts"
 [[ -f .wget-hsts ]] && rm .wget-hsts
 echo "Checking and removing .bash_history"
 [[ -f .bash_history ]] && rm .bash_history
+echo "Reinit bash"
+source .config/bash/bashrc
 echo ""
 echo "       Done "
