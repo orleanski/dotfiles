@@ -19,7 +19,7 @@ curl  -s <URL>install.sh|sh
 ```
 
 ## DONE
-### configs are ready to be used and some changes are still can occur
+### configs are ready to be used and some changes are still going to occur, so keep tuned
 
 - [x] .config/ag
 - [x] .config/bash
