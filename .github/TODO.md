@@ -12,11 +12,10 @@
 
 - [ ] Makefile [see issue #1](https://github.com/vyvox/dotfiles/issues/1#issue-803264396)
 
-I'm going to add all of the config bootstapping in to the [makefile snippet](https://github.com/vyvox/dotfiles/issues/1#issue-803264396) to bootstrap on fresh installation **WIP** `
+I'm going to add all of the config bootstapping in to the [makefile snippet](https://github.com/vyvox/dotfiles/issues/1#issue-803264396) ?(or shell script)? to bootstrap on fresh installation **WIP** `
 
 ```
-wget https://github.com/vyvox/Makefile/archive/master.zip
-make homedir
+curl  -s <URL>install.sh|sh
 ```
 
 ## DONE
@@ -36,4 +35,4 @@ make homedir
 - [x] .config/user-dirs <- changes are made in /etc/xdg/user-dirs.defaults
 
 ### decided agains it
-- [-] .config/zsh  - not my cup of tea
+- [-] .config/zsh  - not my cup of tea, not for now, maybe later
