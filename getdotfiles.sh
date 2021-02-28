@@ -13,6 +13,8 @@ echo "Extracting only .config dir and subdirs ... see below"
 unzip master.zip 'dotfiles-master/.config/**/*' -d ./
 echo "Moving .config dir to the homedir"
 mv dotfiles-master/.config/ ./
+echo "source the new bashrc"
+source .config/bash/bashrc
 echo "Deleting unzipped dir"
 rmdir dotfiles-master/
 echo "Checking and removing master.zip"
