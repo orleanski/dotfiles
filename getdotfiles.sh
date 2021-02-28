@@ -21,6 +21,8 @@ echo "Checking and removing .wget-hsts"
 [[ -f .wget-hsts ]] && rm .wget-hsts
 echo "Checking and removing .bash_history"
 [[ -f .bash_history ]] && rm .bash_history
+echo "reinit shell"
+exec $SHELL -l
 echo ""
 echo "       Done "
 echo " You may want to logout and login back"
