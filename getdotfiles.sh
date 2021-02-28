@@ -22,7 +22,7 @@ echo "Checking and removing .wget-hsts"
 echo "Checking and removing .bash_history"
 [[ -f .bash_history ]] && rm .bash_history
 echo "Reinit bash"
-source .config/bash/bashrc
+exec bash
 echo ""
 echo "       Done "
 echo " You may want to logout and login back"
