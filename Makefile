@@ -42,43 +42,43 @@ help:
 # }}}
 # }}}
 sync: ##{{{ eix-sync output to emrg.txt
-	eix-sync
-	emerge -pvu @world &> /root/emrg.txt
-	date >> /root/emrg.txt
+	eix-sync; \
+	emerge -pvu @world &> /root/emrg.txt; \
+	date >> /root/emrg.txt; \
 	less emrg.txt
 # }}}
 list: ##{{{ Make list of updates in emrg.txt
-	emerge -pvu @world &> /root/emrg.txt
-	date >> /root/emrg.txt
+	emerge -pvu @world &> /root/emrg.txt; \
+	date >> /root/emrg.txt; \
 	less emrg.txt
 # }}}
 dlist: ##{{{ Make list of Deep NewUse updates in emrg.txt
-	emerge -pvuDN @world &> /root/emrg.txt
-	date >> /root/emrg.txt
+	emerge -pvuDN @world &> /root/emrg.txt; \
+	date >> /root/emrg.txt; \
 	less emrg.txt
 # }}}
 ddlist: ##{{{ Make list of Deep NewUse updates with deps in emrg.txt
-	emerge -pvuDN --with-bdeps=y @world &> /root/emrg.txt
-	date >> /root/emrg.txt
+	emerge -pvuDN --with-bdeps=y @world &> /root/emrg.txt; \
+	date >> /root/emrg.txt; \
 	less emrg.txt
 # }}}
 newmirrors: ##{{{ Find fastest mirrors and save in mirror.txt
-#	mirrorselect -s3 -b10 -o -D > mirrors.txt
-	mirrorselect -c USA -b10 -o > mirrors.txt
+#	mirrorselect -s3 -b10 -o -D > mirrors.txt; \
+	mirrorselect -c USA -b10 -o > mirrors.txt; \
 	less mirrors.txt
 # }}}
 fxorgdrv: ##{{{ Fetches and reinstalls drivers and xorg-server
-	emerge -1vf $$(eix --only-names -I xf86- -C x11-drivers)
+	emerge -1vf $$(eix --only-names -I xf86- -C x11-drivers); \
 	emerge -fu xorg-server
 # }}}
 xorgdrv: ##{{{ Reinstalls drivers and xorg-server
-	/etc/init.d/xdm stop
-	emerge -vuq xorg-server
-	emerge -1vq `(eix --only-names -I xf86- -C x11-drivers)`
-	/etc/init.d/xdm start
+	/etc/init.d/display-unit stop; \
+	emerge -vuq xorg-server; \
+	emerge -1vq `(eix --only-names -I xf86- -C x11-drivers)`; \
+	/etc/init.d/display-unit start
 # }}}
 fmod: ##{{{ Find all compiled modules for a specific kernel version
-	find /lib/modules/$(KERNELVERSION)/ -type f -iname '*.o' -or -iname '*.ko' > /root/modules.txt
+	find /lib/modules/$(KERNELVERSION)/ -type f -iname '*.o' -or -iname '*.ko' > /root/modules.txt; \
 	less /root/modules.txt
 #}}}
 fdups: ##{{{ Find slotted packages
@@ -91,12 +91,11 @@ swipekde: ##{{{ Remove kde4 traces from /root/ directory
 	rm -rf .gconf/
 	rm -rf .gconfd/
 	rm -rf .kde4/
-	rm -rf .local/share/
-	rm -rf Desktop/
 	rm -rf .gstreamer*
 #}}}
 clean: ##{{{ cleanup distfiles dir
-	rm -f /var/cache/distfiles/*.{bz2,gz,crate,run,tgz,tbz2,cab,lzma,xpi,xz,zip,deb,_checksum,mod,asc,patch,test,gem,sig}; ls -al /var/cache/distfiles/
+	rm -f /var/cache/distfiles/*.{bz2,gz,crate,run,tgz,tbz2,cab,lzma,xpi,xz,zip,deb,_checksum,mod,asc,patch,test,gem,sig}; \
+	ls -al /var/cache/distfiles/
 # }}}
 rmlogs: ##{{{ remove log files
 	rm /var/log/portage/*.log
@@ -122,18 +121,18 @@ timesync: ##{{{ Immediate time corection
 #
 #	sleep 10 "
 #	chronyc -a makestep "
-	chronyc -a 'burst 4/4'
-	sleep 10
+	chronyc -a 'burst 4/4'; \
+	sleep 10; \
 	chronyc -a makestep
 # }}}
 fscheck: ##{{{ check ext4 on root file system
 	fsck.ext4 -cDfty -C 0 /dev/sda3
 # }}}
 swap: ##{{{ create and activate 5G /.swapfile
-	dd if=/dev/zero of=/.swapfile bs=1024 count=5M
-	chmod 0600 /.swapfile
-	mkswap -L tempswp /.swapfile
-	swapon /.swapfile
+	dd if=/dev/zero of=/.swapfile bs=1024 count=5M; \
+	chmod 0600 /.swapfile; \
+	mkswap -L tempswp /.swapfile; \
+	swapon /.swapfile; \
 	swapon --show
 #}}}
 weather: ##{{{ check weather in Pago Pago
