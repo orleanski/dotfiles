@@ -27,34 +27,6 @@ LANG='en_US.utf8'; export LANG
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 # }}}
-# Bash options {{{
-shopt -s cdspell			# correct minor spelling errors in cd
-# these options are only availabe in Bash4
-if [[ $BASH_VERSION == 4* ]] ; then
-  shopt -s autocd       # type 'dir' instead 'cd dir'
-  shopt -s dirspell     # correct typos when tab-completing names
-  shopt -s globstar     # enable **
-fi
-
-# change cursor shape or color to indicate vi mode in bash
-set -o vi								# switching to vi on ESC and back to edit by a
-set show-mode-in-prompt on
-set vi-cmd-mode-string "\1\e[2 q\2"
-set vi-ins-mode-string "\1\e[6 q\2"
-# }}}
-# History tuneup {{{
-# check if directory doesn't exist, then create it
-[[ -d ${XDG_DATA_HOME}/bash ]] || mkdir -p ${XDG_DATA_HOME}/bash
-export HISTFILE=${XDG_DATA_HOME}/bash/history
-export HISTCONTROL=ignoredups:erasedups
-export HISTIGNORE="ls:ps:history"
-export HISTTIMEFORMAT="%F %T "
-# When the shell exits, append to the history file instead of overwriting it
-shopt -s histappend
-export HISTSIZE=10000		# the number of commands to remember
-export HISTFILESIZE=10000	# the maximum number of lines
-PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
-#}}}
 # TMUX autostart {{{
 if which tmux >/dev/null 2>&1; then
     # if no session is started, start a new session
@@ -66,7 +38,25 @@ if which tmux >/dev/null 2>&1; then
     done
 fi
 #}}}
+# Bash options {{{
+shopt -s cdspell			# correct minor spelling errors in cd
+# these options are only availabe in Bash4
+if [[ $BASH_VERSION == 4* ]] ; then
+  shopt -s autocd       # type 'dir' instead 'cd dir'
+  shopt -s dirspell     # correct typos when tab-completing names
+  shopt -s globstar     # enable **
+fi
+
+# }}}
 # PROMPT {{{
+
+# change cursor shape or color to indicate vi mode in bash
+set -o vi								# switching to vi on ESC and back to edit by a
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
+
+
 if [ $(id -u) -eq 0 ];
 then # you are root, set red colour prompt
   PS1="\\[$(tput setaf 1)\\]\\u @ \$(hostname -f):\\[$(tput sgr0)\\] \\w \n# "
@@ -80,6 +70,7 @@ fi
 # white #/$
 #       mario @ mycomputer:/usr/local/src
 #       #/$
+
 #}}}
 # Source aliases and functions {{{
 # keep aliases in the separate file
@@ -88,6 +79,19 @@ source ${XDG_CONFIG_HOME}/bash/aliases.sh
 # keep functions in the separate file
 source ${XDG_CONFIG_HOME}/bash/functions.sh
 
+#}}}
+# History tuneup {{{
+# check if directory doesn't exist, then create it
+[[ -d ${XDG_DATA_HOME}/bash ]] || mkdir -p ${XDG_DATA_HOME}/bash
+export HISTFILE=${XDG_DATA_HOME}/bash/history
+export HISTCONTROL=ignoredups:erasedups
+export HISTIGNORE="ls:ps:history"
+export HISTTIMEFORMAT="%F %T "
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+export HISTSIZE=10000		# the number of commands to remember
+export HISTFILESIZE=10000	# the maximum number of lines
+PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 #}}}
 # Apps {{{
 export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
