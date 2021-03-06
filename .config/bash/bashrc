@@ -139,23 +139,6 @@ export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #export TMOUT=300
 #}}}
 # Functions {{{
-
-# Create a directory and change into it
-mkcd () { mkdir -p "$@" && cd "$@"; }
-
-# type H and search word
-# replaced grep -> rg or ac (for ripgrep and the silver searcher)
-H() {
-    declare -A HMAP
-    while read line
-    do
-        INDEX=$(echo $line | cut -d' ' -f 1)
-        ENTRY=$(echo $line | cut -d' ' -f 2-)
-        HMAP[$ENTRY]=$INDEX
-    done < <(history | ag "$*" )
-    for ENTRY in "${!HMAP[@]}"
-    do
-        printf "%4s %s\n"  "${HMAP[$ENTRY]}" "$ENTRY"
-    done | sort -n
-}
+# keep functions in the separate file
+source ${XDG_CONFIG_HOME}/bash/functions.sh
 # }}}
