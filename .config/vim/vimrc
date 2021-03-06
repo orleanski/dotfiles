@@ -22,20 +22,15 @@ set runtimepath+=${XDG_CONFIG_HOME}/vim,${XDG_CONFIG_HOME}/vim/after
  "n...: fully qualified path to the viminfo files (note that this is a literal "n")
 "}}}
 " Setting {{{
-"set grepprg=grep\ -nH\ $*
-if executable("rg")
-    set grepprg=rg\ --vimgrep\ --no-heading
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
 set ttyfast			" smoother changes
 set textwidth=0		" Line width to endless
 "set columns=80
 "set wrapmargin=78	" wrap at column 78
 set wrapmargin=0
-set wrap		" wrap visually
+set wrap			" wrap visually
 set linebreak
-set nolist		" list diables linebreak
-set notitle     " set no title
+set nolist			" list diables linebreak
+set notitle     	" set no title
 set ignorecase		" ignore case when searching
 "set noignorecase	" don't ignore case
 set noro			" default to not read only in vimdiff for git difftool
@@ -44,10 +39,12 @@ set helpheight=15	" 15 lines of help is enough
 set paste
 set encoding=utf-8
 set ts=4 sw=4		" tabstops 4 spaces and shiftwidth 4 spaces
+set modelines=0		" Don't use vim settings from the bottom of the file - security concern
+" TODO  do I need grep|ag|rg ?
 "}}}
 " Colorschemes {{{
 " colorschemes from /usr/share/vim/vim82/colors/
-colorscheme desert
+"colorscheme desert
 "colorscheme morning
 "colorscheme murphy
 "colorscheme pablo
@@ -74,7 +71,7 @@ colorscheme desert
 "colorscheme inkpot
 "colorscheme ir_black
 "colorscheme jellybeans
-"colorscheme landscape
+colorscheme landscape
 "colorscheme last256
 "colorscheme meta5
 "colorscheme noctu
@@ -118,7 +115,6 @@ let g:ackprg = 'ag --vimgrep'
 set foldenable          " enable folding
 set foldmethod=marker
 set foldlevel=0
-set modelines=0			" Don't use vim settings from the bottom of the file - security concern
 "}}}
 " MISC {{{
 
