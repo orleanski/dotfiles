@@ -27,20 +27,6 @@ LANG='en_US.utf8'; export LANG
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 # }}}
-# Aliases {{{
-alias tmux='tmux -2 -u'
-alias nano='nano -w'
-alias l='ls -alhF --color --group-directories-first'
-alias lc='ls -ahF --color --group-directories-first'
-alias ll='ls -alhF --color | sort -r | less'
-alias l1='ls -a1 --color --group-directories-first'
-alias c='echo "==============================" && echo $TZ && date && echo "==============================" && cal -m -3'
-alias h='history'
-alias df='df -h'
-alias du='du -h'
-alias du1='du -h --max-depth 1'
-alias mountp='mount | column -t'
-#}}}
 # Bash options {{{
 shopt -s cdspell			# correct minor spelling errors in cd
 # these options are only availabe in Bash4
@@ -95,6 +81,14 @@ fi
 #       mario @ mycomputer:/usr/local/src
 #       #/$
 #}}}
+# Source aliases and functions {{{
+# keep aliases in the separate file
+source ${XDG_CONFIG_HOME}/bash/aliases.sh
+
+# keep functions in the separate file
+source ${XDG_CONFIG_HOME}/bash/functions.sh
+
+#}}}
 # Apps {{{
 export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
 
@@ -138,7 +132,3 @@ export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 ## logout after 5 minutes of inactivity {{{
 #export TMOUT=300
 #}}}
-# Functions {{{
-# keep functions in the separate file
-source ${XDG_CONFIG_HOME}/bash/functions.sh
-# }}}
