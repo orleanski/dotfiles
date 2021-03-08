@@ -12,5 +12,6 @@ alias du1='du -h --max-depth 1'
 alias x='startx -- :2&'
 alias m='neomutt'
 alias ncmpc='ncmpc -c'
+alias sudi='sudo -i'
 #}}}
 
