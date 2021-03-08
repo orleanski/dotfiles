@@ -24,7 +24,7 @@ autoload colors && colors
 
 # prompt 4
 PROMPT="%F{yellow}%n@%m%f:%F{cyan}%~ %f 
-%# "
+%(?.$fg[green].$fg[red])%#$reset_color "
 
 # the prompt we see when being asked for substitutions
 SPROMPT="zsh: correct '%R' to '%r'? [N/y/a/e] "  
