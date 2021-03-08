@@ -43,6 +43,7 @@ set modelines=0		" Don't use vim settings from the bottom of the file - security
 " TODO  do I need grep|ag|rg ?
 "}}}
 " Colorschemes {{{
+colorscheme default
 " colorschemes from /usr/share/vim/vim82/colors/
 "colorscheme desert
 "colorscheme morning
@@ -71,7 +72,7 @@ set modelines=0		" Don't use vim settings from the bottom of the file - security
 "colorscheme inkpot
 "colorscheme ir_black
 "colorscheme jellybeans
-colorscheme landscape
+"colorscheme landscape
 "colorscheme last256
 "colorscheme meta5
 "colorscheme noctu
