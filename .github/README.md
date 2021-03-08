@@ -11,7 +11,11 @@ I would like to keep my enviroment with minimal dependences, plugins and such, a
 A list of config files will grow with time. Also I will include changes in system wide files (from ``/etc/`` dir)
 
 ## Installation via copy paste in the homedir
+### for BASH:
 ``curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh && source .config/bash/bashrc``
+
+### for ZSH:
+``curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh && source .config/zsh/.zshrc``
 
 ## Makefile
 This is my memory aid.
