@@ -59,5 +59,13 @@ let g:lightline={'colorscheme': 'seoul256',}
 set noshowmode
 "}}}
 " colorscheme {{{
-colorscheme morning
+"colorscheme morning
+colorscheme default
+" }}}
+" Hightlights {{{
+filetype plugin indent on
+syntax enable
+
+" Reset search highlights
+nnoremap <silent> <C-l> :let @/=""<CR>
 " }}}
