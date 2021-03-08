@@ -1,5 +1,8 @@
 # Complied from the man pages and lots of others's zshrcs
 
+# Load modules
+autoload zmv              # mass rename files
+
 setopt allexport 			# all parameters defined below are exported
 
 # History options
