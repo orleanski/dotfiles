@@ -21,7 +21,7 @@ setopt HIST_REDUCE_BLANKS     # trim extra blanks from history lines.
 setopt HIST_SAVE_NO_DUPS      # do not write a duplicate event to the history file.
 setopt INC_APPEND_HISTORY     # incremental append, do not wait until shell exits.
 setopt SHARE_HISTORY          # share history between zsh processes.
-setopt HIST_NO STORE          # don't save 'history' cmd in history
+setopt HIST_NO_STORE          # don't save 'history' cmd in history
 setopt HIST_NO_FUNCTIONS      # skip function definitions.
 setopt HIST_VERIFY            # allow correction of !-expressions before running them
 setopt HIST_ALLOW_CLOBBER     # use history entries to enable clobbering.
@@ -39,7 +39,7 @@ setopt INTERACTIVE_COMMENTS   # allow inline comments.
 setopt COMPLETE_IN_WORD       # complete from the cursor onwards.
 setopt ALWAYS_TO_END          # move cursor after the word with each completion.
 setopt NO_BEEP                # beep when no results are available.
-unsetop BEEP
+unsetopt BEEP
 setopt NO_LIST_BEEP           # disable beeping on ambiguous-completion.
 setopt EXTENDED_GLOB          # expand globbing.
 setopt COMPLETE_ALIASES       # autocompletion for alias switches.
