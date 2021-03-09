@@ -1,14 +1,13 @@
-name: Deployment CI
+name: CI
 
-on: 
-  workflow_dispatch:
+on: [push]
 
 jobs:
-  build:
+  build-ubuntu-latest:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Run getdotfiles.sh
+    - name: Run ./setup.sh
     - shell: bash
       run: |
-        ./getdotfiles.sh
+        ./setup.sh
