@@ -3,10 +3,10 @@ name: CI
 on: [push]
 
 jobs:
-  build-ubuntu-latest:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Run ./setup.sh
     - shell: bash
       run: |
