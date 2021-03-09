@@ -16,6 +16,8 @@ empty for now
 
 installation script is ready and tested several times see [README](README.md)
 
+- [x] Github CI attained
+
 ### configs are ready to be used and some changes are still going to occur, so keep tuned
 
 - [x] .config/ag
