@@ -1,4 +1,5 @@
 # dotfiles
+* [![CI](https://github.com/vyvox/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/vyvox/dotfiles/actions/workflows/main.yml)
 * ![License:MIT](https://img.shields.io/github/license/vyvox/dotfiles)
 * ![GitHub last commit](https://img.shields.io/github/last-commit/vyvox/dotfiles)
 * ![Open issues](https://img.shields.io/github/issues-raw/vyvox/dotfiles?style=plastic)
