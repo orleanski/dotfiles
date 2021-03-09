@@ -12,10 +12,10 @@ A list of config files will grow with time. Also I will include changes in syste
 
 ## Installation via copy paste of the following command:
 ### for BASH:
-``curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh && source .config/bash/bashrc``
+``curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/setup.sh | sh && source .config/bash/bashrc``
 
 ### for ZSH:
-``curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh && source .config/zsh/.zshrc``
+``curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/setup.sh | sh && source .config/zsh/.zshrc``
 
 ## Makefile
 This is my memory aid.
