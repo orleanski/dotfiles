@@ -1,7 +1,7 @@
 #!/bin/sh
 # Usage:
-#        curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh && source .config/bash/bashrc
-#        curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/getdotfiles.sh | sh && source .config/zsh/.zshrc
+#        curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/setup.sh | sh && source .config/bash/bashrc
+#        curl -s https://raw.githubusercontent.com/vyvox/dotfiles/master/setup.sh | sh && source .config/zsh/.zshrc
 
 echo "       Installing dotfiles, it will be quick!"
 echo ""
