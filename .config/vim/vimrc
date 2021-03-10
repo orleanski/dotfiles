@@ -40,6 +40,7 @@ set paste
 set encoding=utf-8
 set ts=4 sw=4		" tabstops 4 spaces and shiftwidth 4 spaces
 set modelines=0		" Don't use vim settings from the bottom of the file - security concern
+set virtualedit=all	" block insert
 " TODO  do I need grep|ag|rg ?
 "}}}
 " Colorschemes {{{
