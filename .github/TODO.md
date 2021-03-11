@@ -28,6 +28,7 @@ installation script is ready and tested several times see [README](README.md)
 - [x] .config/less
 - [x] .config/neofetch
 - [x] .config/neovim
+- [x] .config/todo
 - [x] .config/tmux
 - [x] .config/vim
 - [x] .config/yadm
