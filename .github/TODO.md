@@ -1,6 +1,4 @@
 # TODO
-- [ ] /etc/bash/bashrc
-- [ ] /etc/zsh/zshenv
 - [ ] /etc/profile.d/xdg.sh [see issue #3](https://github.com/vyvox/dotfiles/issues/3#issue-806949413)
 - [ ] .config/allacritty
 - [ ] .config/mc -- midnight commander
@@ -8,7 +6,8 @@
 - [ ] .config/X11/.Xauthority
 
 ## BACKLOG
-empty for now
+- [ ] /etc/bash/bashrc
+- [ ] /etc/zsh/zshenv
 
 
 
@@ -24,13 +23,14 @@ installation script is ready and tested several times see [README](README.md)
 - [x] .config/bash
 - [x] .config/git
 - [x] .config/htop
-- [x] .config/readline
 - [x] .config/less
 - [x] .config/neofetch
 - [x] .config/neovim
-- [x] .config/todo
+- [x] .config/readline
 - [x] .config/tmux
+- [x] .config/todo
 - [x] .config/vim
 - [x] .config/yadm
-- [x] .config/user-dirs <- changes are made in /etc/xdg/user-dirs.defaults
 - [x] .config/zsh
+- [x] .config/user-dirs.dirs <- changes are made in /etc/xdg/user-dirs.defaults
+- [x] .config/user-dirs.locale
