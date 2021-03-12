@@ -1,25 +1,28 @@
 " Initialization {{{
 set nocompatible	" Set compatibility to Vim only.
 filetype off		" Helps force plug-ins to load correctly when it is turned back on below.
-" sourcing files
-"set directory=~/.config/vim/vimtmp,.
-set directory=${XDG_CONFIG_HOME}/vim/vimtmp,.
-set directory=${XDG_CONFIG_HOME}/vim/swap//,.		" OR set noswapfile
-set backupdir=${XDG_CONFIG_HOME}/vim/backup//,.		" OR set nobackup
-set undodir=${XDG_CONFIG_HOME}/vim/undo//,.			" OR set noundofile
-set viminfo='10,<100,:100,%,n${XDG_CONFIG_HOME}/vim/.viminfo
+" or set noswapfile nobackup noundofile
+set backupdir=${XDG_CACHE_HOME}/vim/backup | call mkdir(&backupdir, 'p', 0700)
+set directory=${XDG_CACHE_HOME}/vim/swap   | call mkdir(&directory, 'p', 0700)
+set viewdir=${XDG_CACHE_HOME}/vim/view     | call mkdir(&viewdir, 'p', 0700)
+set undodir=${XDG_CACHE_HOME}/vim/undo     | call mkdir(&undodir, 'p', 0700)
+set directory=${XDG_CACHE_HOME}/vim/vimtmp,.
 set runtimepath+=${XDG_CONFIG_HOME}/vim,${XDG_CONFIG_HOME}/vim/after
+
+set viminfo='10,<100,:100,%,n${XDG_CACHE_HOME}/vim/.viminfo
+" viminfo
+" 'q  : q, number of edited file remembered
+" <m  : m, number of lines saved for each register
+" :p  : p, number of  history cmd lines remembered
+" %   : saves and restore the buffer list
+" n...: fully qualified path to the viminfo files (note that this is a literal "n")
+
+" sourcing files
 "so ${XDG_CONFIG_HOME}/vim/plugin/comments.vim
 "so ~/.config/vim/plugin/comments.vim
 "so ~/.config/vim/colors/*.vim
 " Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data.
 " Useful for copying large amounts of data between files.
-"set viminfo+=n$HOME/.config/vim/.viminfo
- "'q  : q, number of edited file remembered
- "<m  : m, number of lines saved for each register
- ":p  : p, number of  history cmd lines remembered
- "%   : saves and restore the buffer list
- "n...: fully qualified path to the viminfo files (note that this is a literal "n")
 
 " remove extraneous ".netrwhist" file
 autocmd VimLeave * if filereadable("~/.vim/.netrwhist") | call delete("~/.vim/.netrwhist;rmdir ~/.vim") | endif
@@ -27,7 +30,7 @@ autocmd VimLeave * if filereadable("~/.vim/.netrwhist") | call delete("~/.vim/.n
 " Setting {{{
 set ttyfast			" smoother changes
 set textwidth=0		" Line width to endless
-"set columns=80
+set columns=80
 "set wrapmargin=78	" wrap at column 78
 set wrapmargin=0
 set wrap			" wrap visually
@@ -43,8 +46,8 @@ set paste
 set encoding=utf-8
 set ts=4 sw=4		" tabstops 4 spaces and shiftwidth 4 spaces
 set modelines=0		" Don't use vim settings from the bottom of the file - security concern
-set virtualedit=all	" block insert
-" TODO  do I need grep|ag|rg ?
+"set virtualedit=all	" block insert
+" TODO  do I need grep|ag|rg ? see below for ackprg
 "}}}
 " Colorschemes {{{
 "colorscheme default
