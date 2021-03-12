@@ -30,7 +30,7 @@ autocmd VimLeave * if filereadable("~/.vim/.netrwhist") | call delete("~/.vim/.n
 " Setting {{{
 set ttyfast			" smoother changes
 set textwidth=0		" Line width to endless
-set columns=80
+"set columns=80
 "set wrapmargin=78	" wrap at column 78
 set wrapmargin=0
 set wrap			" wrap visually
