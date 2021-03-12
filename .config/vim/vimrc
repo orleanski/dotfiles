@@ -20,6 +20,9 @@ set runtimepath+=${XDG_CONFIG_HOME}/vim,${XDG_CONFIG_HOME}/vim/after
  ":p  : p, number of  history cmd lines remembered
  "%   : saves and restore the buffer list
  "n...: fully qualified path to the viminfo files (note that this is a literal "n")
+
+" remove extraneous ".netrwhist" file
+autocmd VimLeave * if filereadable("~/.vim/.netrwhist") | call delete("~/.vim/.netrwhist;rmdir ~/.vim") | endif
 "}}}
 " Setting {{{
 set ttyfast			" smoother changes
