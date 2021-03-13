@@ -24,11 +24,13 @@ fi
 TZ='Pacific/Pago_Pago'; export TZ
 LANG='en_US.utf8'; export LANG
 #}}}
+
 # Check if interactive {{{
 #================================================
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 # }}}
+
 #  Tmux {{{
 #================================================
 if [ -z "$TMUX" ]
@@ -36,6 +38,7 @@ then
     tmux attach -t TMUX || tmux -u -2 new -s TMUX
 fi
 # }}}
+
 # Bash options {{{
 #================================================
 # these options are only availabe in Bash4
@@ -45,8 +48,8 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s cdspell		# correct minor spelling errors in cd
   shopt -s globstar     # enable **
 fi
-
 # }}}
+
 # PROMPT {{{
 #================================================
 # change cursor shape or color to indicate vi mode in bash
@@ -63,14 +66,8 @@ else # normal
 #  PS1="[\\u@\\h:\\w] $ "
 PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\] @ \[$(tput sgr0)\]\[\033[38;5;2m\]\H\[$(tput sgr0)\]:  \[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\]\n\\$\[$(tput sgr0)\] "
 fi
-# Colored prompt
-# green username and host name
-# yellow directory
-# white #/$
-#       mario @ mycomputer:/usr/local/src
-#       #/$
+# }}}
 
-#}}}
 # Source aliases and functions {{{
 #================================================
 # keep aliases in the separate file
@@ -78,8 +75,8 @@ source ${XDG_CONFIG_HOME}/bash/aliases.sh
 
 # keep functions in the separate file
 source ${XDG_CONFIG_HOME}/bash/functions.sh
-
 #}}}
+
 # History tuneup {{{
 #================================================
 # check if directory doesn't exist, then create it
@@ -94,6 +91,7 @@ export HISTSIZE=10000		# the number of commands to remember
 export HISTFILESIZE=10000	# the maximum number of lines
 PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 #}}}
+
 # Apps {{{
 #================================================
 export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
@@ -113,12 +111,14 @@ export INPUTRC=${XDG_CONFIG_HOME}/readline/inputrc
 
 export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #}}}
+
 ## Console Settigs {{{
 #================================================
 ## Mute console
 #set bell-style off
 #setterm -bfreq 0
 #}}}
+
 ## fortune {{{
 #================================================
 # Some people don't like fortune. If you uncomment the following lines,
@@ -129,7 +129,8 @@ export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #    /usr/bin/fortune
 #    echo
 #fi
-#}}}
+# }}}
+
 ## Midnight Commander chdir enhancement {{{
 #================================================
 ## allow mc to chdir to its latest working dir on exit
@@ -138,8 +139,9 @@ export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #if [ -f /usr/share/mc/mc.gentoo ] then
 #	. /usr/share/mc/mc.gentoo
 #fi
-#}}}
+# }}}
+
 ## logout after 5 minutes of inactivity {{{
 #================================================
 #export TMOUT=300
-#}}}
+# }}}

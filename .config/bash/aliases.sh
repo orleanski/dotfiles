@@ -1,4 +1,5 @@
 # Aliases {{{
+#================================================
 alias tmux='tmux -2 -u'
 alias nano='nano -w'
 alias l='ls -alhF --color --group-directories-first'
