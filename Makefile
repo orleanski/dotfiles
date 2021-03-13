@@ -94,7 +94,8 @@ swipekde: ##{{{ Remove kde4 traces from /root/ directory
 	rm -rf .gstreamer*
 #}}}
 clean: ##{{{ cleanup distfiles dir
-	rm -f /var/cache/distfiles/*.{bz2,gz,crate,run,tgz,tbz2,cab,lzma,xpi,xz,zip,deb,_checksum,mod,asc,patch,test,gem,sig}; \
+	rm -f /var/cache/distfiles/*.{bz2,gz,crate,run,tgz,tbz2,cab,lzma,xpi,xz,zip,deb,mod,asc,patch,test,gem,sig}; \
+	rm -f /var/cache/distfiles/*_checksum*; \
 	ls -al /var/cache/distfiles/
 # }}}
 rmlogs: ##{{{ remove log files
