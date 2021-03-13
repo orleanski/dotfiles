@@ -1,12 +1,37 @@
+$include /etc/inputrc
+
+# all the fun stuff goes below
+# Options from /etc/inputrc are hashed out {{{
 # comments on the same line causes malfunction of the options
 # so comments are on a separate lines.
 
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+# Enable 8bit input
+#set meta-flag on
+# Keep the 8th bit for display
+#set input-meta on
+#set output-meta on
 
-# Use vi line editing commands.
-set editing-mode vi
+# Turns off 8th bit stripping
+#set convert-meta off
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+#set mark-symlinked-directories on
+
+# no sounds  can be: none, visible or audible
+#set bell-style none
+# }}}
+
+# Allow the command prompt to wrap to the next line
+set horizontal-scroll-mode off
 
 # show (ins) or (cmd) in front of the prompt, comments on the same line will make it dissapear
 set show-mode-in-prompt on
+
+set expand-tilde on
+
+# Use vi line editing commands.
+set editing-mode vi
 
 # Use vi keymap.
 set keymap vi
@@ -16,20 +41,8 @@ $if mode=vi
     Control-l clear-screen
 $endif
 
-# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
-set input-meta on
-set output-meta on
-set convert-meta off
 
-# Immediately add a trailing slash when autocompleting symlinks to directories
-set mark-symlinked-directories on
-
-set expand-tilde on
-
-# no sounds
-set bell-style none
-
-## Completion options
+# Completion options
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 set match-hidden-files off
@@ -70,6 +83,21 @@ set skip-completed-text on
 
 set completion-map-case on
 
+# -------------------------- KEYS
+# https://en.wikipedia.org/wiki/ANSI_escape_code
+# To test what a key is, run cat and then press the key:
+# $ cat
+# ^[[A  == arrow Up
+# ^[[B  == arrow Down
+# ^[[D  == arrow Left
+# ^[[C  == arrow Right
+# ^[[5~ == Page Up
+# ^[[6~ == Page Down
+# To get a list of which escape sequences correspond to which keyboard-keys,
+# you can use a command such as
+# $ infocmp -L -1
+# $ infocmp -L -1 xterm
+
 # When tab-completing, show a menu.
 TAB: menu-complete
 "\e[Z": menu-complete-backward
@@ -79,10 +107,14 @@ TAB: menu-complete
 
 ## Search in history
 # Match the current input in history when pressing UP or DOWN
+# CTRL-UP and CTRL-DOWN to do partial search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 "\C-P": history-search-backward
 "\C-N": history-search-forward
+# The PageUp and PageDown keys are set with the "e[5~": & "e[6~": lines
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
 
 # Do not display ^C
 set echo-control-characters off
