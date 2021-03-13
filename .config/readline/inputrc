@@ -53,11 +53,16 @@ set page-completions off
 # Ignore case for autocompletion
 set completion-ignore-case on
 
-# filename matching during completion will treat hyphens and underscores
-# as equivalent. This option requires completion-ignore-case to be enabled.
+# Treat hypen and underscores as equivalent.
+# This option requires completion-ignore-case to be enabled.
 set completion-map-case on
 
+# Display the common prefix choices on the first completion then cycle the
+# available choices on the next completion.
+set menu-complete-display-prefix on
+
 # Avoid using TAB twice to show the matches
+# Immediately display completion matches.
 set show-all-if-ambiguous on
 
 set show-all-if-unmodified  on
@@ -131,5 +136,9 @@ $if Bash
     "\C-i": menu-complete
     # Completion
     # do history expansion when space entered
-    Space: magic-space
+    #Space: magic-space
+	# Disable Bash 5.1 highlighted paste feature.
+	# See: https://is.gd/fsgOMe & https://is.gd/Uccmae
+	set enable-bracketed-paste off
 $endif
+
