@@ -53,8 +53,14 @@ set page-completions off
 # Ignore case for autocompletion
 set completion-ignore-case on
 
+# filename matching during completion will treat hyphens and underscores
+# as equivalent. This option requires completion-ignore-case to be enabled.
+set completion-map-case on
+
 # Avoid using TAB twice to show the matches
 set show-all-if-ambiguous on
+
+set show-all-if-unmodified  on
 
 # Display one match per line
 set completion-display-width 0
@@ -80,8 +86,6 @@ set completion-query-items 10
 # Readline used by Bash 4.)
 set skip-completed-text on
 
-
-set completion-map-case on
 
 # -------------------------- KEYS
 # https://en.wikipedia.org/wiki/ANSI_escape_code
@@ -118,3 +122,14 @@ TAB: menu-complete
 
 # Do not display ^C
 set echo-control-characters off
+
+$if Bash
+    # Search history back and forward using page-up and page-down
+    "\e[5~": history-search-backward
+    "\e[6~": history-search-forward
+    # Cycle through ambiguous completions instead of list (option bellow)
+    "\C-i": menu-complete
+    # Completion
+    # do history expansion when space entered
+    Space: magic-space
+$endif
