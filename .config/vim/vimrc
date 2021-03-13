@@ -1,4 +1,5 @@
 " Initialization {{{
+"================================================
 set nocompatible	" Set compatibility to Vim only.
 filetype off		" Helps force plug-ins to load correctly when it is turned back on below.
 " or set noswapfile nobackup noundofile
@@ -28,6 +29,7 @@ set viminfo='10,<100,:100,%,n${XDG_CACHE_HOME}/vim/.viminfo
 autocmd VimLeave * if filereadable("~/.vim/.netrwhist") | call delete("~/.vim/.netrwhist;rmdir ~/.vim") | endif
 "}}}
 " Setting {{{
+"================================================
 set ttyfast			" smoother changes
 set textwidth=0		" Line width to endless
 "set columns=80
@@ -47,9 +49,17 @@ set encoding=utf-8
 set ts=4 sw=4		" tabstops 4 spaces and shiftwidth 4 spaces
 set modelines=0		" Don't use vim settings from the bottom of the file - security concern
 "set virtualedit=all	" block insert
+
+" I want my cursor to have a pipe shape when I am in insert mode
+" and a block shape when I am in command mode
+let &t_SI = "\e[6 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[2 q"
+
 " TODO  do I need grep|ag|rg ? see below for ackprg
 "}}}
 " Colorschemes {{{
+"================================================
 "colorscheme default
 " colorschemes from /usr/share/vim/vim82/colors/
 "colorscheme desert
@@ -95,6 +105,7 @@ colorscheme Tomorrow-Night-Bright
 "colorscheme vividchalk
 "}}}
 " Status Line {{{
+"================================================
 " lightline will take care about the status line
 set laststatus=2
 set showcmd
@@ -102,6 +113,7 @@ set noshowmode		" No show current input mode in the status line
 set noruler			" No show the line number on the status line
 " }}}
 " Highlighting {{{
+"================================================
 " Needed for Syntax Highlighting and stuff
 filetype plugin indent on
 syntax enable
@@ -120,11 +132,13 @@ let g:ackprg = 'ag --vimgrep'
 
 "}}}
 " Folding {{{
+"================================================
 set foldenable          " enable folding
 set foldmethod=marker
 set foldlevel=0
 "}}}
 " MISC {{{
+"================================================
 
 let g:tex_flavor = "latex"
 

@@ -19,38 +19,36 @@ fi
 # Put your fun stuff here.
 
 # TimeZone and Locale {{{
+#================================================
 # Define Time Zone BIOS clock set in UTC
 TZ='Pacific/Pago_Pago'; export TZ
 LANG='en_US.utf8'; export LANG
 #}}}
 # Check if interactive {{{
+#================================================
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 # }}}
-# TMUX autostart {{{
-if which tmux >/dev/null 2>&1; then
-    # if no session is started, start a new session
-    test -z ${TMUX} && tmux -2 -u
-
-    # when quitting tmux, try to attach
-    while test -z ${TMUX}; do
-        tmux attach || break
-    done
+#  Tmux {{{
+#================================================
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux -u -2 new -s TMUX
 fi
-#}}}
+# }}}
 # Bash options {{{
-shopt -s cdspell			# correct minor spelling errors in cd
+#================================================
 # these options are only availabe in Bash4
 if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s autocd       # type 'dir' instead 'cd dir'
   shopt -s dirspell     # correct typos when tab-completing names
-  shopt -s cdspell		# correct typos on 'cd' command
+  shopt -s cdspell		# correct minor spelling errors in cd
   shopt -s globstar     # enable **
 fi
 
 # }}}
 # PROMPT {{{
-
+#================================================
 # change cursor shape or color to indicate vi mode in bash
 set -o vi								# switching to vi on ESC and back to edit by a
 set show-mode-in-prompt on
@@ -74,6 +72,7 @@ fi
 
 #}}}
 # Source aliases and functions {{{
+#================================================
 # keep aliases in the separate file
 source ${XDG_CONFIG_HOME}/bash/aliases.sh
 
@@ -82,6 +81,7 @@ source ${XDG_CONFIG_HOME}/bash/functions.sh
 
 #}}}
 # History tuneup {{{
+#================================================
 # check if directory doesn't exist, then create it
 [[ -d ${XDG_DATA_HOME}/bash ]] || mkdir -p ${XDG_DATA_HOME}/bash
 export HISTFILE=${XDG_DATA_HOME}/bash/history
@@ -95,10 +95,12 @@ export HISTFILESIZE=10000	# the maximum number of lines
 PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 #}}}
 # Apps {{{
+#================================================
 export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
 
 #export LESSHISTFILE=-												# No less history (~/.lesshst file)
-# lesskey is binary file generated with lesskey from ~/.lesskey, then copy, also can be uses as /etc/sysless
+# lesskey is binary file generated with lesskey from ~/.lesskey,
+# then copy, also can be uses as /etc/sysless
 export LESSKEY="${XDG_CONFIG_HOME}/less/lesskey"
 
 # check if directory doesn't exist, then create it
@@ -112,11 +114,13 @@ export INPUTRC=${XDG_CONFIG_HOME}/readline/inputrc
 export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #}}}
 ## Console Settigs {{{
+#================================================
 ## Mute console
 #set bell-style off
 #setterm -bfreq 0
 #}}}
 ## fortune {{{
+#================================================
 # Some people don't like fortune. If you uncomment the following lines,
 # you will have a fortune each time you log in ;-)
 
@@ -127,6 +131,7 @@ export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #fi
 #}}}
 ## Midnight Commander chdir enhancement {{{
+#================================================
 ## allow mc to chdir to its latest working dir on exit
 ##
 #. /usr/libexec/mc/mc.sh # or
@@ -135,5 +140,6 @@ export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 #fi
 #}}}
 ## logout after 5 minutes of inactivity {{{
+#================================================
 #export TMOUT=300
 #}}}

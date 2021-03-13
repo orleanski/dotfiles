@@ -1,6 +1,3 @@
-# .zshrc config
-# Author: Dmitri
-# 
 # XDG settings are loaded from zshenv
 
 # The rest of this configuration applies to interactive shells only.
@@ -8,6 +5,7 @@
 
 
 # check and source config files in order {{{
+#================================================
 [ -f "$XDG_CONFIG_HOME"/zsh/options.zsh ] && source "$XDG_CONFIG_HOME"/zsh/options.zsh
 [ -f "$XDG_CONFIG_HOME"/zsh/aliases.zsh ] && source "$XDG_CONFIG_HOME"/zsh/aliases.zsh
 [ -f "$XDG_CONFIG_HOME"/zsh/functions.zsh ] && source "$XDG_CONFIG_HOME"/zsh/functions.zsh
@@ -17,8 +15,9 @@
 # }}}
 
 #  Tmux {{{
+#================================================
 if [ -z "$TMUX" ]
 then
-    tmux attach -t TMUX || tmux new -s TMUX
+    tmux attach -t TMUX || tmux -u -2 new -s TMUX
 fi
 # }}}

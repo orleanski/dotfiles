@@ -1,4 +1,5 @@
 # Aliases {{{
+#================================================
 alias nano='nano -w'
 alias l='ls -alhF --color=always --group-directories-first'
 alias lc='ls -ahF --color=always --group-directories-first'

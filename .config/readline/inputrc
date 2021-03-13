@@ -28,8 +28,15 @@ $include /etc/inputrc
 # Allow the command prompt to wrap to the next line
 set horizontal-scroll-mode off
 
-# show (ins) or (cmd) in front of the prompt, comments on the same line will make it dissapear
+# The defaults for these two variables are "(cmd)" and "(ins)" for command and
+# insert modes.  According to the man-page for readline, you can
+# also specify non-printable characters, such as terminal control sequences, by
+# embedding the sequences between the \1 and \2 escape characters.
+# I want my cursor to have a pipe shape when I am in insert mode
+# and a block shape when I am in command mode
 set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
 
 # Do not expand "~" to the home directory when completing.
 set expand-tilde off

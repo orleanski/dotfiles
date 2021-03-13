@@ -6,6 +6,7 @@ autoload zmv              # mass rename files
 setopt allexport 			# all parameters defined below are exported
 
 # History options {{{
+#================================================
 [ -d "$XDG_DATA_HOME"/zsh ] || mkdir -p "$XDG_DATA_HOME"/zsh
 HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTSIZE=4096
@@ -33,7 +34,7 @@ setopt AUTO_NAME_DIRS         # use named dirs when possible
 setopt markdirs
 setopt PUSHD_IGNORE_DUPS      # do not push multiple copies of the same dir onto the stack.
 setopt PUSHD_SILENT           # do not print the directory stack after pushd or popd.
-setopt PUSHD_TO_HOME          # pushd with no arguments gets you to Kansas.
+setopt PUSHD_TO_HOME          # pushd with no arguments gets you to $HOME.
 setopt PUSHD_MINUS            # swaps `+` and `-` when used w/a number to specify a dir in the stack.
 setopt INTERACTIVE_COMMENTS   # allow inline comments.
 setopt COMPLETE_IN_WORD       # complete from the cursor onwards.
@@ -56,12 +57,7 @@ setopt AUTO_REMOVE_SLASH      # remove the slash if the next character is delimi
 setopt RCQUOTES               # double-single quotes '' for escaping
 setopt REC_EXACT
 setopt cdable_vars
-# Directory Changing
-#setopt autopushd        # Use "pushd" instead of "cd", enabling use of "popd"
-#setopt pushdsilent      # Make "popd" be less verbose (like cd)
-#setopt pushdignoredups  # Don't record the same directory as multiple entries
-#setopt pushdtohome
-#DIRSTACKSIZE=10         # Limit the number of directories to keep in history
+#DIRSTACKSIZE=10              # Limit the number of directories to keep in history
 
 
 # Correction
