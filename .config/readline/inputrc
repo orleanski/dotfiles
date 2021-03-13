@@ -1,7 +1,8 @@
 $include /etc/inputrc
 
 # all the fun stuff goes below
-# Options from /etc/inputrc are hashed out {{{
+## Options from /etc/inputrc are hashed out {{{
+#================================================
 # comments on the same line causes malfunction of the options
 # so comments are on a separate lines.
 
@@ -22,13 +23,16 @@ $include /etc/inputrc
 #set bell-style none
 # }}}
 
+# Misc options {{{
+#================================================
 # Allow the command prompt to wrap to the next line
 set horizontal-scroll-mode off
 
 # show (ins) or (cmd) in front of the prompt, comments on the same line will make it dissapear
 set show-mode-in-prompt on
 
-set expand-tilde on
+# Do not expand "~" to the home directory when completing.
+set expand-tilde off
 
 # Use vi line editing commands.
 set editing-mode vi
@@ -41,8 +45,10 @@ $if mode=vi
     Control-l clear-screen
 $endif
 
+# }}}
 
-# Completion options
+# Completion options {{{
+#================================================
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 set match-hidden-files off
@@ -91,8 +97,10 @@ set completion-query-items 10
 # Readline used by Bash 4.)
 set skip-completed-text on
 
+# }}}
 
-# -------------------------- KEYS
+# KEYS  {{{
+#================================================
 # https://en.wikipedia.org/wiki/ANSI_escape_code
 # To test what a key is, run cat and then press the key:
 # $ cat
@@ -129,16 +137,13 @@ TAB: menu-complete
 set echo-control-characters off
 
 $if Bash
-    # Search history back and forward using page-up and page-down
-    "\e[5~": history-search-backward
-    "\e[6~": history-search-forward
-    # Cycle through ambiguous completions instead of list (option bellow)
-    "\C-i": menu-complete
     # Completion
     # do history expansion when space entered
     #Space: magic-space
+
 	# Disable Bash 5.1 highlighted paste feature.
 	# See: https://is.gd/fsgOMe & https://is.gd/Uccmae
 	set enable-bracketed-paste off
 $endif
 
+# }}}
