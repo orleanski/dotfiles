@@ -14,7 +14,10 @@ echo "Extracting only .config dir and subdirs ... see below"
 unzip master.zip 'dotfiles-master/.config/**/*' -d ./
 echo "Moving .config dir to the homedir"
 mv dotfiles-master/.config/ ./
-echo "Deleting unzipped dir"
+echo "Updating current state of the users user-dirs.dir"
+xdg-user-dirs-update
+echo " .... cleaning up now .... "
+echo "Deleting temp unzipped dir"
 rmdir dotfiles-master/
 echo "Checking and removing master.zip"
 [[ -f master.zip ]] && rm master.zip
