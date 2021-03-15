@@ -3,6 +3,6 @@
 # How to report a security vulnerability
 
 Please email any and all security concerns directly to the primary author
-([@vyvox](https://github.com/vyvox)).
+([@orleanski](https://github.com/orleanski)).
 
 Find the email address in the commit author history for this repository.
