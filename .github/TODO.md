@@ -1,7 +1,8 @@
 # TODO
-- [ ] /etc/profile.d/xdg.sh [see issue #3](https://github.com/vyvox/dotfiles/issues/3#issue-806949413)
+- [ ] /etc/profile.d/xdg.sh [see issue #3](https://github.com/orleanski/dotfiles/issues/3#issue-806949413)
 - [ ] .config/allacritty
 - [ ] .config/mc -- midnight commander
+- [ ] .config/wget
 - [ ] .config/X11/.xinitrc
 - [ ] .config/X11/.Xauthority
 
