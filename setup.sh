@@ -9,7 +9,7 @@ cd ~/
 echo "Moving .config to .config.bak, can be deleted afterwards"
 [[ -d .config ]] && mv .config .config.bak
 echo "Obtaining github archive with config files"
-wget -q https://github.com/vyvox/dotfiles/archive/master.zip
+wget -q https://github.com/orleanski/dotfiles/archive/master.zip
 echo "Extracting only .config dir and subdirs ... see below"
 unzip master.zip 'dotfiles-master/.config/**/*' -d ./
 echo "Moving .config dir to the homedir"
