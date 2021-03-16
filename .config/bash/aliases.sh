@@ -11,5 +11,6 @@ alias h='history'
 alias df='df -h'
 alias du='du -h'
 alias du1='du -h --max-depth 1'
-alias mountp='mount | column -t'
+alias mountt='mount | column -t'
+alias sudi='sudo -i'
 #}}}
