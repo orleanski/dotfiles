@@ -10,7 +10,7 @@
 - [ ] /etc/bash/bashrc
 - [ ] /etc/zsh/zshenv
 
-
+also, please see [issues](https://github.com/orleanski/dotfiles/issues) with some ideas
 
 ## DONE
 
@@ -26,12 +26,13 @@ installation script is ready and tested several times see [README](README.md)
 - [x] .config/htop
 - [x] .config/less
 - [x] .config/neofetch
-- [x] .config/neovim
+- [x] .config/nvim
 - [x] .config/readline
 - [x] .config/tmux
 - [x] .config/todo
 - [x] .config/vim
 - [x] .config/yadm
 - [x] .config/zsh
+- [x] .config/user-dirs.conf
 - [x] .config/user-dirs.dirs <- changes are made in /etc/xdg/user-dirs.defaults
 - [x] .config/user-dirs.locale
