@@ -1,5 +1,5 @@
 # Functions {{{
-
+#================================================
 # Create a directory and change into it
 mkcd () { mkdir -p "$@" && cd "$@"; }
 
@@ -11,7 +11,7 @@ H() {
         INDEX=$(echo $line | cut -d' ' -f 1)
         ENTRY=$(echo $line | cut -d' ' -f 2-)
         HMAP[$ENTRY]=$INDEX
-    done < <(history | rg "$*" )
+    done < <(history | grep "$*" )
     for ENTRY in "${!HMAP[@]}"
     do
         printf "%4s %s\n"  "${HMAP[$ENTRY]}" "$ENTRY"
