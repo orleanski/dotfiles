@@ -44,12 +44,39 @@ fi
 #================================================
 # these options are only availabe in Bash4
 if [[ $BASH_VERSION == 4* ]] ; then
-  shopt -s autocd       # type 'dir' instead 'cd dir'
-  shopt -s dirspell     # correct typos when tab-completing names
+  shopt -s autocd		# type 'dir' instead 'cd dir'
+  shopt -s dirspell		# correct typos when tab-completing names
   shopt -s cdspell		# correct minor spelling errors in cd
-  shopt -s globstar     # enable **
+  shopt -s globstar		# enable **
 fi
 # }}}
+
+# Check and source aliases, functions and apps {{{
+#================================================
+# keep aliases in the separate file
+[ -f "$XDG_CONFIG_HOME"/bash/aliases.sh ] && source ${XDG_CONFIG_HOME}/bash/aliases.sh
+
+# keep functions in the separate file
+[ -f "$XDG_CONFIG_HOME"/bash/functions.sh ] && source ${XDG_CONFIG_HOME}/bash/functions.sh
+
+# keep apps initialisation in the separate file
+[ -f "$XDG_CONFIG_HOME"/bash/apps.sh ] && source ${XDG_CONFIG_HOME}/bash/apps.sh
+#}}}
+
+# History tuneup {{{
+#================================================
+# check if directory doesn't exist, then create it
+[[ -d ${XDG_DATA_HOME}/bash ]] || mkdir -p ${XDG_DATA_HOME}/bash
+export HISTFILE=${XDG_DATA_HOME}/bash/history
+export HISTCONTROL=ignoredups:erasedups
+export HISTIGNORE="ls:ps:history"
+export HISTTIMEFORMAT="%F %T "
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+export HISTSIZE=10000		# the number of commands to remember
+export HISTFILESIZE=10000	# the maximum number of lines
+PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+#}}}
 
 # PROMPT {{{
 #================================================
@@ -68,36 +95,6 @@ else # normal
 PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\] @ \[$(tput sgr0)\]\[\033[38;5;2m\]\H\[$(tput sgr0)\]:  \[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\]\n\\$\[$(tput sgr0)\] "
 fi
 # }}}
-
-# Source aliases and functions {{{
-#================================================
-# keep aliases in the separate file
-source ${XDG_CONFIG_HOME}/bash/aliases.sh
-
-# keep functions in the separate file
-source ${XDG_CONFIG_HOME}/bash/functions.sh
-#}}}
-
-# History tuneup {{{
-#================================================
-# check if directory doesn't exist, then create it
-[[ -d ${XDG_DATA_HOME}/bash ]] || mkdir -p ${XDG_DATA_HOME}/bash
-export HISTFILE=${XDG_DATA_HOME}/bash/history
-export HISTCONTROL=ignoredups:erasedups
-export HISTIGNORE="ls:ps:history"
-export HISTTIMEFORMAT="%F %T "
-# When the shell exits, append to the history file instead of overwriting it
-shopt -s histappend
-export HISTSIZE=10000		# the number of commands to remember
-export HISTFILESIZE=10000	# the maximum number of lines
-PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
-#}}}
-
-# Apps {{{
-#================================================
-# keep apps initialisation in the separate file
-source ${XDG_CONFIG_HOME}/bash/apps.sh
-#}}}
 
 ## Console Settigs {{{
 #================================================
