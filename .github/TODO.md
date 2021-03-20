@@ -2,7 +2,6 @@
 - [ ] /etc/profile.d/xdg.sh [see issue #3](https://github.com/orleanski/dotfiles/issues/3#issue-806949413)
 - [ ] .config/allacritty
 - [ ] .config/mc -- midnight commander
-- [ ] .config/wget
 - [ ] .config/X11/.xinitrc
 - [ ] .config/X11/.Xauthority
 
@@ -33,6 +32,7 @@ installation script is ready and tested several times see [README](README.md)
 - [x] .config/vim
 - [x] .config/yadm
 - [x] .config/zsh
+- [x] .config/wgetrc <- changes are made in /etc/wgetrc (other options see #12)
 - [x] .config/user-dirs.conf
 - [x] .config/user-dirs.dirs <- changes are made in /etc/xdg/user-dirs.defaults
 - [x] .config/user-dirs.locale
