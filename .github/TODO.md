@@ -32,7 +32,7 @@ installation script is ready and tested several times see [README](README.md)
 - [x] .config/vim
 - [x] .config/yadm
 - [x] .config/zsh
-- [x] .config/wgetrc <- changes are made in /etc/wgetrc (other options see #12)
+- [x] .config/wgetrc <- changes are made in /etc/wgetrc (other options see [#12](https://github.com/orleanski/dotfiles/issues/12))
 - [x] .config/user-dirs.conf
 - [x] .config/user-dirs.dirs <- changes are made in /etc/xdg/user-dirs.defaults
 - [x] .config/user-dirs.locale
