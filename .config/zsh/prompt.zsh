@@ -12,7 +12,7 @@ autoload colors && colors
 # 36 - cyan
 # 37 - white
 
-# prompt 4
+# prompt 4 - buggy in the second line, doubling commands on TAB
 #PROMPT="%F{yellow}%n@%m%f:%F{cyan}%~ %f
 #%(?.$fg[green].$fg[red])%#$reset_color "
 
@@ -22,5 +22,3 @@ PS1='%F{yellow}%n@%m%f:%F{cyan}%~%f
 
 # the prompt we see when being asked for substitutions
 SPROMPT="zsh: correct '%R' to '%r'? [N/y/a/e] "
-
-
