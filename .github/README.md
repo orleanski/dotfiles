@@ -29,3 +29,14 @@ The progress is reflected in my [TODO](TODO.md) list
 ## TMUX status line
 
 ![tmux status line](tmux_status.png?raw=true)
+
+#### tmux window flags
+````shell
+  #:  window activity flag
+  !:  window bell flag
+  ~:  window silence flag
+  *:  current window flag
+  -:  last window flag
+  Z:  window zoomed flag
+  ' ' (a space):  no flags at all.
+````
