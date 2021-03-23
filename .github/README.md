@@ -26,3 +26,6 @@ The ``Makefile`` will be staying @ ``$HOME``
 ## TODO
 The progress is reflected in my [TODO](TODO.md) list
 
+## TMUX status line
+
+![tmux status line](tmux_status.png?raw=true)
