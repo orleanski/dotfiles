@@ -63,7 +63,6 @@ ddlist: ##{{{ Make list of Deep NewUse updates with deps in emrg.txt
 	less emrg.txt
 # }}}
 newmirrors: ##{{{ Find fastest mirrors and save in mirror.txt
-#	mirrorselect -s3 -b10 -o -D > mirrors.txt; \
 	mirrorselect -c USA -b10 -o > mirrors.txt; \
 	less mirrors.txt
 # }}}
