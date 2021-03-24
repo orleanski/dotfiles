@@ -19,8 +19,9 @@ xdg-user-dirs-update
 echo " .... cleaning up now .... "
 echo "Deleting temp unzipped dir"
 rmdir dotfiles-master/
-echo "Checking and removing master.zip"
-[[ -f master.zip ]] && rm master.zip
+#echo "Checking and removing master.zip"
+#[[ -f master.zip ]] && rm master.zip
+echo "keep master.zip for now, some files from there you might need later"
 echo "Checking and removing .wget-hsts"
 [[ -f .wget-hsts ]] && rm .wget-hsts
 echo "Checking and removing .bash_history"
