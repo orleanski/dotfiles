@@ -13,4 +13,5 @@ alias du='du -h'
 alias du1='du -h --max-depth 1'
 alias mountt='mount | column -t'
 alias sudi='sudo -i'
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 #}}}
