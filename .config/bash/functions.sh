@@ -37,4 +37,7 @@ function lowercase()  # move filenames to lowercase
     done
 }
 
+# Automatically do an ls after each cd
+cdl() { builtin cd "$@" && ls -alhF --color --group-directories-first; }
+
 # }}}
