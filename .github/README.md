@@ -28,7 +28,7 @@ The progress is reflected in my [TODO](TODO.md) list
 
 ## TMUX status line
 
-![tmux status line](tmux_status.png?raw=true)
+![tmux status line](tmux_statusline.png?raw=true)
 
 Red heart will be visible in UTF-8 console, and if your font does not support it, you will see just a red square. If console is not UTF-8 enabled, then the heart will dissapear.
 
