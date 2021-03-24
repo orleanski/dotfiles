@@ -18,13 +18,6 @@ set viminfo='10,<100,:100,%,n${XDG_CACHE_HOME}/vim/.viminfo
 " %   : saves and restore the buffer list
 " n...: fully qualified path to the viminfo files (note that this is a literal "n")
 
-" sourcing files
-"so ${XDG_CONFIG_HOME}/vim/plugin/comments.vim
-"so ~/.config/vim/plugin/comments.vim
-"so ~/.config/vim/colors/*.vim
-" Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data.
-" Useful for copying large amounts of data between files.
-
 " remove extraneous ".netrwhist" file
 autocmd VimLeave * if filereadable("~/.vim/.netrwhist") | call delete("~/.vim/.netrwhist;rmdir ~/.vim") | endif
 "}}}
@@ -60,6 +53,7 @@ let &t_EI = "\e[2 q"
 "}}}
 " Colorschemes {{{
 "================================================
+colorscheme burnttoast256
 "colorscheme default
 " colorschemes from /usr/share/vim/vim82/colors/
 "colorscheme desert
@@ -158,3 +152,32 @@ map <MouseMiddle> <esc>"*p
 ":map <f9> :make
 ":map <silent> <F9> :w<CR>:make all<CR>
 "}}}
+
+-
+" vim-plug {{{
+"================================================
+" https://github.com/junegunn/vim-plug
+
+" Automatic installation of the vimplug
+if empty(glob('$XDG_CONFIG_HOME/vim/autoload/plug.vim'))
+  silent !curl -fLo ${XDG_CONFIG_HOME}/vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source '$XDG_CONFIG_HOME/vim/vimrc'
+endif
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('$XDG_CONFIG_HOME/vim/plugged/')
+
+" Declare the list of plugins.
+
+Plug 'tpope/vim-sensible'               " common ground settings
+Plug 'vim-scripts/comments.vim'         " commenting out on ctrl-c
+Plug 'preservim/nerdtree'               " a file system explorer
+Plug 'quantum-omega/vim-burnttoast256'  " colorscheme
+Plug 'dpelle/vim-LanguageTool'          " better spellchecker
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+" }}}
