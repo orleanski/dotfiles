@@ -51,61 +51,6 @@ let &t_EI = "\e[2 q"
 
 " TODO  do I need grep|ag|rg ? see below for ackprg
 "}}}
-" Colorschemes {{{
-"================================================
-colorscheme burnttoast256
-"colorscheme default
-" colorschemes from /usr/share/vim/vim82/colors/
-"colorscheme desert
-"colorscheme morning
-"colorscheme murphy
-"colorscheme pablo
-"colorscheme peachpuff
-"colorscheme ron
-"colorscheme shine
-"colorscheme slate
-"colorscheme torte
-"colorscheme zellner
-"colorscheme fahrenheit
-
-" colorschemes from ~/.config/vim/colors/
-"colorscheme asu1dark
-"colorscheme ayu
-"colorscheme challenger_deep
-"colorscheme cobalt
-"colorscheme detailed
-"colorscheme distinguished
-"colorscheme fahrenheit
-"colorscheme farout
-"colorscheme flattened_dark
-"colorscheme hemisu
-"colorscheme ingretu
-"colorscheme inkpot
-"colorscheme ir_black
-"colorscheme jellybeans
-"colorscheme landscape
-"colorscheme last256
-"colorscheme meta5
-"colorscheme noctu
-"colorscheme PaperColor
-"colorscheme smyck
-"colorscheme solarized
-"colorscheme sunburst
-"colorscheme synthetic
-"colorscheme thaumaturge
-colorscheme Tomorrow-Night-Bright
-"colorscheme-framer-syntax
-"colorscheme-hackerman
-"colorscheme vividchalk
-"}}}
-" Status Line {{{
-"================================================
-" lightline will take care about the status line
-set laststatus=2
-set showcmd
-set noshowmode		" No show current input mode in the status line
-set noruler			" No show the line number on the status line
-" }}}
 " Highlighting {{{
 "================================================
 " Needed for Syntax Highlighting and stuff
@@ -152,8 +97,6 @@ map <MouseMiddle> <esc>"*p
 ":map <f9> :make
 ":map <silent> <F9> :w<CR>:make all<CR>
 "}}}
-
--
 " vim-plug {{{
 "================================================
 " https://github.com/junegunn/vim-plug
@@ -176,8 +119,23 @@ Plug 'tpope/vim-sensible'               " common ground settings
 Plug 'vim-scripts/comments.vim'         " commenting out on ctrl-c
 Plug 'preservim/nerdtree'               " a file system explorer
 Plug 'quantum-omega/vim-burnttoast256'  " colorscheme
+Plug 'itchyny/lightline.vim'			" status line
 Plug 'dpelle/vim-LanguageTool'          " better spellchecker
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+" }}}
+" Coloring interface {{{
+"================================================
+" load if after plugins processing
+
+" syntax hightlight
+colorscheme burnttoast256
+
+" lightline will take care about the status line
+set laststatus=2
+set showcmd
+set noshowmode		" No show current input mode in the status line
+set noruler			" No show the line number on the status line
+
 " }}}
