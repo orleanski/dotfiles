@@ -39,6 +39,7 @@ Red heart will be visible in UTF-8 console, and if your font does not support it
   ~:  window silence flag
   *:  current window flag
   -:  last window flag
+  M:  marked pane
   Z:  window zoomed flag
   ' ' (a space):  no flags at all.
 ````
