@@ -30,7 +30,13 @@ The progress is reflected in my [TODO](TODO.md) list
 
 ![tmux status line](tmux_statusline.png?raw=true)
 
-Red heart will be visible in UTF-8 console, and if your font does not support it, you will see just a red square. If console is not UTF-8 enabled, then the heart will dissapear.
+- Red heart will be visible in UTF-8 console, and if your font does not support it, you will see just a red square. If console is not UTF-8 enabled, then the heart will dissapear.
+- who @ hostname
+- window with ongoing process name (make)
+- window with finished process ended with alert `sleep 5s && echo -e '\a'` as an example
+- window with two panes, one is marked and zoomed, but no activity
+- active window
+- date and time are always in the right corner
 
 #### tmux window flags
 ````tmux
@@ -39,7 +45,6 @@ Red heart will be visible in UTF-8 console, and if your font does not support it
   ~:  window silence flag
   *:  current window flag
   -:  last window flag
-  M:  marked pane
+  M:  marked pane flag
   Z:  window zoomed flag
-  ' ' (a space):  no flags at all.
 ````
