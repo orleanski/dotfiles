@@ -18,16 +18,10 @@ A list of config files will grow with time. Also I will include changes in syste
 ### for ZSH:
 ``curl -s https://raw.githubusercontent.com/orleanski/dotfiles/master/setup.sh | sh && source .config/zsh/.zshrc``
 
-## Makefile
-This is my memory aid.
+#### Directory structure after running `setup.sh`
+![initial directory structure](setup.sh_dir_structure.png?raw=true)
 
-The ``Makefile`` will be staying @ ``$HOME``
-
-## TODO
-The progress is reflected in my [TODO](TODO.md) list
-
-## TMUX status line
-
+#### TMUX status line
 ![tmux status line](tmux_statusline.png?raw=true)
 
 - Red heart will be visible in UTF-8 console, and if your font does not support it, you will see just a red square. If console is not UTF-8 enabled, then the heart will dissapear.
@@ -38,7 +32,7 @@ The progress is reflected in my [TODO](TODO.md) list
 - active window
 - date and time are always in the right corner
 
-#### tmux window flags
+##### tmux window flags
 ````tmux
   #:  window activity flag
   !:  window bell flag
@@ -48,3 +42,19 @@ The progress is reflected in my [TODO](TODO.md) list
   M:  marked pane flag
   Z:  window zoomed flag
 ````
+#### VIM
+Vim on the first start will automatically download vim-plug and then install few plugins, and will give you a warning, 
+just let it finish installation close vim and open it again, vim will start quick and clean.
+
+##### Vim plugins
+![vim plugins](vim_plugins.png?raw=true)
+
+
+## Makefile
+This is my memory aid.
+
+The ``Makefile`` will be staying @ ``$HOME``
+
+## TODO
+The progress is reflected in my [TODO](TODO.md) list
+
