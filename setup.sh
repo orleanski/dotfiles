@@ -53,9 +53,9 @@ xdg-user-dirs-update --force
 
 
 echo "Checking on XDG directories and creating them if needed"
-[ -d "${XDG_CACHE_HOME}" ] || mkdir "${XDG_CACHE_HOME}"
-[ -d "${XDG_CONFIG_HOME}" ] || mkdir "${XDG_CONFIG_HOME}"
-[ -d "${XDG_DATA_HOME}" ] || mkdir "${XDG_DATA_HOME}"
+[ -d "${XDG_CACHE_HOME:-$HOME/.cache}" ] || mkdir "${XDG_CACHE_HOME}"
+[ -d "${XDG_CONFIG_HOME:-$HOME/.config}" ] || mkdir "${XDG_CONFIG_HOME}"
+[ -d "${XDG_DATA_HOME:-$HOME/.local/share}" ] || mkdir -p "${XDG_DATA_HOME}"
 
 echo "Changing permissions on 700 to .cache .config and .data"
 chmod 700 ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME}
