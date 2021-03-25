@@ -29,7 +29,7 @@ installation script is ready and tested several times see [README](README.md)
 - [x] .config/readline
 - [x] .config/tmux
 - [x] .config/todo
-- [x] .config/vim
+- [x] .config/vim with vim-plug auto-install
 - [x] .config/yadm
 - [x] .config/zsh
 - [x] .config/wgetrc <- changes are made in /etc/wgetrc (other options see [#12](https://github.com/orleanski/dotfiles/issues/12))
