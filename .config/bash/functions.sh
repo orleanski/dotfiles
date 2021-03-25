@@ -40,4 +40,12 @@ function lowercase()  # move filenames to lowercase
 # Automatically do an ls after each cd
 cdl() { builtin cd "$@" && ls -alhF --color --group-directories-first; }
 
+
+# rsync - Synchronize content of two directories biderectional
+# rsyncb user@server:/path/to/remote/dir /path/to/local/dir
+rsyncb() {
+    rsync -Przzuve ssh "$1"/* "$2"
+    rsync -Przzuve ssh "$2"/* "$1"
+}
+
 # }}}
