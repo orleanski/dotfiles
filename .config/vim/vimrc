@@ -51,6 +51,19 @@ let &t_EI = "\e[2 q"
 
 " TODO  do I need grep|ag|rg ? see below for ackprg
 "}}}
+" LEADER key {{{
+" Define the <leader> key
+" map leader to space
+let mapleader = " "
+
+" By default you have 1000ms after typing your leader key to type your
+" shortcut. That value can be adjusted by setting timeoutlen in your vimrc
+" set timeoutlen 500 " Set timeout length to 500 ms
+
+" By default, shows no feedback for this timeout length.
+" show your leader key in the bottom right corner for the duration of the timeout
+set showcmd
+"}}}
 " Highlighting {{{
 "================================================
 " Needed for Syntax Highlighting and stuff
@@ -116,14 +129,18 @@ call plug#begin('$XDG_CONFIG_HOME/vim/plugged/')
 " Declare the list of plugins.
 
 Plug 'tpope/vim-sensible'               " common ground settings
-Plug 'vim-scripts/comments.vim'         " commenting out on ctrl-c
 Plug 'preservim/nerdtree'               " a file system explorer
 Plug 'quantum-omega/vim-burnttoast256'  " colorscheme
-Plug 'itchyny/lightline.vim'			" status line
-Plug 'dpelle/vim-LanguageTool'          " better spellchecker
+Plug 'itchyny/lightline.vim'            " status line
+Plug 'dpelle/vim-LanguageTool'          " advanced spellchecker
+Plug 'cespare/vim-toml'                 " toml syntax
+Plug 'preservim/nerdcommenter'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+" unused plugins
+" Plug 'vim-scripts/comments.vim'         " commenting out on ctrl-c
+
 " }}}
 " Coloring interface {{{
 "================================================
@@ -137,5 +154,35 @@ set laststatus=2
 set showcmd
 set noshowmode		" No show current input mode in the status line
 set noruler			" No show the line number on the status line
+
+" }}}
+" NERDcommenter settings {{{
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
 " }}}
