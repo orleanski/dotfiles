@@ -56,9 +56,8 @@ let &t_EI = "\e[2 q"
 " map leader to space
 let mapleader = " "
 
-" By default you have 1000ms after typing your leader key to type your
-" shortcut. That value can be adjusted by setting timeoutlen in your vimrc
-" set timeoutlen 500 " Set timeout length to 500 ms
+" By default you have 1000ms after typing your leader key to type your shortcut.
+" set timeoutlen 500
 
 " By default, shows no feedback for this timeout length.
 " show your leader key in the bottom right corner for the duration of the timeout
