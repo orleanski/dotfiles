@@ -40,4 +40,11 @@ function lowercase()  # move filenames to lowercase
 # Automatically do an ls after each cd
 cdl() { builtin cd "$@" && ls -alhF --color --group-directories-first; }
 
+# Get IP addressess
+myip(){
+    echo "   Local IP: `ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'`"
+    echo "External IP: `curl -s http://icanhazip.com`"
+}
+
+
 # }}}
