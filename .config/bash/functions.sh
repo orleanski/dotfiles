@@ -38,7 +38,7 @@ function lowercase()  # move filenames to lowercase
 }
 
 # Automatically do an ls after each cd
-cdl() { builtin cd "$@" && ls -alhF --color --group-directories-first; }
+cd() { builtin cd "$@" && ls -alhF --color --group-directories-first; }
 
 # Get IP addressess
 myip(){
