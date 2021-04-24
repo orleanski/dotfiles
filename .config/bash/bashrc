@@ -26,10 +26,10 @@ TZ='Pacific/Pago_Pago'; export TZ
 LANG='en_US.utf8'; export LANG
 #}}}
 
-# Check if interactive {{{
+## Check if interactive {{{
 #================================================
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+#[ -z "$PS1" ] && return
 # }}}
 
 #  Tmux {{{
