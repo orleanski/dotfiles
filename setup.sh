@@ -63,5 +63,5 @@ chmod 700 ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME}
 echo ""
 echo "       Done "
 echo "please add xdg.sh to /etc/profile.d/"
-echo "please emerge x11-misc/xdg-user-dirs"
-echo "please emerge dev-vcs/git for vimplug"
+echo "let's see if we need to emerge some software"
+emerge -avq --noreplace eselect-repository tmux vim bash-completion xdg-user-dirs dev-vcs/git
