@@ -62,6 +62,8 @@ chmod 700 ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME}
 
 echo ""
 echo "       Done "
+echo " it is time for the POST INSTALL steps"
 echo "please add xdg.sh to /etc/profile.d/"
-echo "let's see if we need to emerge some software"
-emerge -avq --noreplace eselect-repository tmux vim bash-completion xdg-user-dirs dev-vcs/git
+echo "please change /etc/bash/bashrc and let it read our bashrc"
+echo "emerge -avq --noreplace eselect-repository sudo tmux vim bash-completion xdg-user-dirs dev-vcs/git"
+echo "logout and log back in"
