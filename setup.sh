@@ -60,6 +60,9 @@ echo "Checking on XDG directories and creating them if needed"
 echo "Changing permissions on 700 to .cache .config and .data"
 chmod 700 ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME}
 
+echo "create .ssh in ~/.local and link it"
+[ -d "$HOME/.local/.ssh" ] || mkdir -p "$HOME/.local/.ssh" && ln -s ".local/.ssh" "$HOME/"
+
 echo ""
 echo "       Done "
 echo " it is time for the POST INSTALL steps"
