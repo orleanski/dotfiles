@@ -143,7 +143,7 @@ call plug#end()
 " }}}
 " Coloring interface {{{
 "================================================
-" load if after plugins processing
+" load it after plugins processing
 
 " syntax hightlight
 colorscheme burnttoast256
@@ -156,6 +156,7 @@ set noruler			" No show the line number on the status line
 
 " }}}
 " NERDcommenter settings {{{
+"================================================
 
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
