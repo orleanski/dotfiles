@@ -6,7 +6,7 @@
 echo "       Installing dotfiles, it will be quick!"
 echo ""
 
-cd "$HOME"
+cd "$HOME/"
 
 echo "Moving .config to .config.bak, can be deleted afterwards"
 [[ -d .config ]] && mv .config .config.bak
@@ -20,7 +20,12 @@ unzip  master.zip  -d "$HOME/"
 echo "Moving .config dir to the homedir"
 mv dotfiles-master/.config/  $HOME/
 mv dotfiles-master/Makefile $HOME/
-
+mv dotfiles-master/Desktop $HOME/
+mv dotfiles-master/Documents $HOME/
+mv dotfiles-master/Downloads $HOME/
+mv dotfiles-master/Media $HOME/
+mv dotfiles-master/Projects $HOME/
+mv dotfiles-master/Public $HOME/
 
 echo " .... cleaning up now .... "
 
@@ -36,17 +41,17 @@ echo "Checking and removing .wget-hsts"
 echo "Checking and removing .bash_history"
 [[ -f .bash_history ]] && rm .bash_history
 
-echo "Creating homedir structure, may ways"
-[ -d "$HOME/Desktop" ] || mkdir -p "$HOME/Desktop"
-[ -d "$HOME/Documents/Templates" ] || mkdir -p "$HOME/Documents/Templates"
-[ -d "$HOME/Downloads" ] || mkdir "$HOME/Downloads"
-[ -d "$HOME/Media/Books" ] || mkdir -p "$HOME/Media/Books"
-[ -d "$HOME/Media/Music" ] || mkdir "$HOME/Media/Music"
-[ -d "$HOME/Media/Picture/Backgrounds" ] || mkdir -p "$HOME/Media/Pictures/Backgrounds"
-[ -d "$HOME/Media/Picture/Screenshots" ] || mkdir -p "$HOME/Media/Pictures/Screenshots"
-[ -d "$HOME/Media/Videos" ] || mkdir "$HOME/Media/Videos"
-[ -d "$HOME/Projects" ] || mkdir "$HOME/Projects"
-[ -d "$HOME/Public" ] || mkdir "$HOME/Public"
+# echo "Creating homedir structure, may ways"
+# [ -d "$HOME/Desktop" ] || mkdir -p "$HOME/Desktop"
+# [ -d "$HOME/Documents/Templates" ] || mkdir -p "$HOME/Documents/Templates"
+# [ -d "$HOME/Downloads" ] || mkdir "$HOME/Downloads"
+# [ -d "$HOME/Media/Books" ] || mkdir -p "$HOME/Media/Books"
+# [ -d "$HOME/Media/Music" ] || mkdir "$HOME/Media/Music"
+# [ -d "$HOME/Media/Picture/Backgrounds" ] || mkdir -p "$HOME/Media/Pictures/Backgrounds"
+# [ -d "$HOME/Media/Picture/Screenshots" ] || mkdir -p "$HOME/Media/Pictures/Screenshots"
+# [ -d "$HOME/Media/Videos" ] || mkdir "$HOME/Media/Videos"
+# [ -d "$HOME/Projects" ] || mkdir "$HOME/Projects"
+# [ -d "$HOME/Public" ] || mkdir "$HOME/Public"
 
 echo "Updating current state of the users user-dirs.dir"
 xdg-user-dirs-update --force
@@ -62,11 +67,15 @@ chmod 700 ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME}
 
 echo "create .ssh in ~/.local and link it"
 [ -d "$HOME/.local/.ssh" ] || mkdir -p "$HOME/.local/.ssh" && ln -s ".local/.ssh" "$HOME/"
+[ -d "$HOME/.local/.gnupg" ] || mkdir -p "$HOME/.local/.gnupg" && ln -s ".local/.gnupg" "$HOME/"
+[ -d "$HOME/.local/.dbus" ] || mkdir -p "$HOME/.local/.dbus" && ln -s ".local/.dbus" "$HOME/"
+[ -d "$HOME/.local/.kde4" ] || mkdir -p "$HOME/.local/.kde4" && ln -s ".local/.kde4" "$HOME/"
+[ -d "$HOME/.local/.cargo" ] || mkdir -p "$HOME/.local/.cargo" && ln -s ".local/.cargo" "$HOME/"
 
 echo ""
 echo "       Done "
 echo " it is time for the POST INSTALL steps"
 echo "please add xdg.sh to /etc/profile.d/"
 echo "please change /etc/bash/bashrc and let it read our bashrc"
-echo "emerge -avq --noreplace eselect-repository sudo tmux vim bash-completion xdg-user-dirs dev-vcs/git"
+echo "emerge -avq --noreplace eselect-repository doas tmux vim bash-completion xdg-user-dirs dev-vcs/git"
 echo "logout and log back in"
