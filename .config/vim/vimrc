@@ -134,6 +134,7 @@ Plug 'itchyny/lightline.vim'            " status line
 Plug 'dpelle/vim-LanguageTool'          " advanced spellchecker
 Plug 'cespare/vim-toml'                 " toml syntax
 Plug 'preservim/nerdcommenter'
+Plug 'rust-lant/rust.vim'				" rust files detection, syntax formatting
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
