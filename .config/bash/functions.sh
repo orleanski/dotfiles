@@ -46,5 +46,9 @@ myip(){
     echo "External IP: `curl -s http://icanhazip.com`"
 }
 
+# instant web server in the current directory on localIP:9000 port
+httpserve(){
+	python -m http.server --bind 192.168.171.128 --directory ./ 9000
+}
 
 # }}}
