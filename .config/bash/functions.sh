@@ -48,7 +48,7 @@ myip(){
 
 # instant web server in the current directory on localIP:9000 port
 httpserve(){
-	python -m http.server --bind 192.168.171.128 --directory ./ 9000
+	python -m http.server --bind `ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'` --directory ./ 8000
 }
 
 # }}}
