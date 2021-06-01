@@ -12,6 +12,7 @@ alias df='df -h'
 alias du='du -h'
 alias du1='du -h --max-depth 1'
 alias mountt='mount | column -t'
-alias sudi='doas su -'
+alias sudi='sudo su -'
+alias dosu='doas su -'
 # alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 #}}}
