@@ -53,8 +53,6 @@ echo "Checking and removing .bash_history"
 # [ -d "$HOME/Projects" ] || mkdir "$HOME/Projects"
 # [ -d "$HOME/Public" ] || mkdir "$HOME/Public"
 
-echo "Updating current state of the users user-dirs.dir"
-xdg-user-dirs-update --force
 
 
 echo "Checking on XDG directories and creating them if needed"
@@ -71,6 +69,10 @@ echo "create .ssh in ~/.local and link it"
 [ -d "$HOME/.local/.dbus" ] || mkdir -p "$HOME/.local/.dbus" && ln -s ".local/.dbus" "$HOME/"
 [ -d "$HOME/.local/.kde4" ] || mkdir -p "$HOME/.local/.kde4" && ln -s ".local/.kde4" "$HOME/"
 [ -d "$HOME/.local/.cargo" ] || mkdir -p "$HOME/.local/.cargo" && ln -s ".local/.cargo" "$HOME/"
+[ -d "$XDG_DATA_HOME/templates" ] || mkdir -p "$XDG_DATA_HOME/templates"
+
+echo "Updating current state of the users user-dirs.dir"
+xdg-user-dirs-update --force
 
 echo ""
 echo "       Done "
