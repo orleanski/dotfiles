@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Shell script
+Comment=Shell script
+Type=Link
+URL=.source/script.sh
+Icon=shell
