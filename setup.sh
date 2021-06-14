@@ -18,7 +18,8 @@ echo "Unzipping archive"
 unzip  master.zip  -d "$HOME/"
 
 echo "Moving .config dir to the homedir"
-mv dotfiles-master/.config/  $HOME/
+mv dotfiles-master/.config  $HOME/
+mv dotfiles-master/.local/share  $HOME/
 mv dotfiles-master/Makefile $HOME/
 mv dotfiles-master/Desktop $HOME/
 mv dotfiles-master/Documents $HOME/
