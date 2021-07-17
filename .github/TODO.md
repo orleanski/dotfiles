@@ -24,7 +24,6 @@ installation script is ready and tested several times see [README](README.md)
 - [x] .config/git
 - [x] .config/htop
 - [x] .config/less
-- [X] .config/mc -- midnight commander
 - [x] .config/neofetch
 - [x] .config/nvim
 - [x] .config/readline
