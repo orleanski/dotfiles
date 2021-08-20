@@ -12,21 +12,21 @@ echo "Moving .config to .config.bak, can be deleted afterwards"
 [[ -d .config ]] && mv .config .config.bak
 
 echo "Obtaining github archive with config files"
-wget -nc --config=/etc/wgetrc "https://github.com/orleanski/dotfiles/archive/master.zip"
+wget -nc "https://github.com/orleanski/dotfiles/archive/master.zip"
 
 echo "Unzipping archive"
 unzip  master.zip  -d "$HOME/"
 
-echo "Moving .config dir to the homedir"
+echo "Moving .config dir to the homedir and creating dir structure"
 mv dotfiles-master/.config  $HOME/
-mv dotfiles-master/.local/share  $HOME/
-mv dotfiles-master/Makefile $HOME/
+mv dotfiles-master/.local  $HOME/
 mv dotfiles-master/Desktop $HOME/
 mv dotfiles-master/Documents $HOME/
 mv dotfiles-master/Downloads $HOME/
 mv dotfiles-master/Media $HOME/
 mv dotfiles-master/Projects $HOME/
 mv dotfiles-master/Public $HOME/
+mv dotfiles-master/Makefile $HOME/
 
 echo " .... cleaning up now .... "
 
@@ -77,8 +77,13 @@ echo "create .ssh in ~/.local and link it"
 
 echo ""
 echo "       Done "
-echo " it is time for the POST INSTALL steps"
-echo "please add xdg.sh to /etc/profile.d/"
-echo "please change /etc/bash/bashrc and let it read our bashrc"
-echo "emerge -avq --noreplace eselect-repository doas tmux vim bash-completion xdg-user-dirs dev-vcs/git"
-echo "logout and log back in"
+echo "it's time for the POST INSTALL steps"
+echo "- please add xdg.sh to /etc/profile.d/"
+echo "- please change /etc/bash/bashrc and let it read our bashrc"
+echo "- emerge -avq --noreplace eselect-repository doas tmux vim bash-completion xdg-user-dirs dev-vcs/git"
+echo "- logout and log back in"
+echo "- run nvim and :PlugInstall"
+echo "and you should be set"
+echo " Goodbye now ... "
+echo ""
+read -e -n 1 -p "press any key to continue" \n; 
