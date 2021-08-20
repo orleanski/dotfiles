@@ -67,7 +67,9 @@ echo "Updating current state of the users user-dirs.dir"
 xdg-user-dirs-update --force
 
 echo "checking return of xdg_cache_home, xdg_config_home, xdg_data_home"
+
 xdg-user-dir XDG_CACHE_HOME
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 xdg-user-dir XDG_CONFIG_HOME
 xdg-user-dir XDG_DATA_HOME
 
@@ -79,7 +81,7 @@ echo "check for some dotfiles, move them into ~/.local and link it"
 [ -d "$HOME/.local/.gnupg" ] || mkdir -p "$HOME/.local/.gnupg" && ln -s ".local/.gnupg" "$HOME/"
 [ -d "$HOME/.local/.dbus" ] || mkdir -p "$HOME/.local/.dbus" && ln -s ".local/.dbus" "$HOME/"
 [ -d "$HOME/.local/.kde4" ] || mkdir -p "$HOME/.local/.kde4" && ln -s ".local/.kde4" "$HOME/"
-[ -d "$HOME/.local/.cargo" ] || mkdir -p "$HOME/.local/.cargo" && ln -s ".local/.cargo" "$HOME/"
+#[ -d "$HOME/.local/.cargo" ] || mkdir -p "$HOME/.local/.cargo" && ln -s ".local/.cargo" "$HOME/"
 
 echo ""
 echo "       Done "
