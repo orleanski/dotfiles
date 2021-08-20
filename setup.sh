@@ -57,7 +57,7 @@ echo "Checking and removing .bash_history"
 
 
 
-echo "Checking on XDG directories and creating them if needed"
+# echo "Checking on XDG directories and creating them if needed"
 # [ -d "${XDG_CACHE_HOME:-$HOME/.cache}" ] || mkdir "${XDG_CACHE_HOME}"
 # [ -d "${XDG_CONFIG_HOME:-$HOME/.config}" ] || mkdir "${XDG_CONFIG_HOME}"
 # [ -d "${XDG_DATA_HOME:-$HOME/.local/share}" ] || mkdir -p "${XDG_DATA_HOME}"
@@ -87,4 +87,4 @@ echo "- run nvim and :PlugInstall"
 echo "and you should be set"
 echo " Goodbye now ... "
 echo ""
-read -e -n 1 -p "press any key to continue" \n; 
+# read -e -n 1 -p "press any key to continue" \n;
