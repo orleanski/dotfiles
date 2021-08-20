@@ -57,10 +57,19 @@ echo "Checking and removing .bash_history"
 
 
 echo "Checking on XDG directories and creating them if needed"
+# [ -d "${XDG_CACHE_HOME:-$HOME/.cache}" ] || mkdir "${XDG_CACHE_HOME}"
+# [ -d "${XDG_CONFIG_HOME:-$HOME/.config}" ] || mkdir "${XDG_CONFIG_HOME}"
+# [ -d "${XDG_DATA_HOME:-$HOME/.local/share}" ] || mkdir -p "${XDG_DATA_HOME}"
+# [ -d "${XDG_DATA_HOME/templates}" ] || mkdir -p "${XDG_DATA_HOME/templates}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 [ -d "${XDG_CACHE_HOME:-$HOME/.cache}" ] || mkdir "${XDG_CACHE_HOME}"
+xdg-user-dir XDG_CACHE_HOME
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 [ -d "${XDG_CONFIG_HOME:-$HOME/.config}" ] || mkdir "${XDG_CONFIG_HOME}"
+xdg-user-dir XDG_CONFIG_HOME
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 [ -d "${XDG_DATA_HOME:-$HOME/.local/share}" ] || mkdir -p "${XDG_DATA_HOME}"
-[ -d "${XDG_DATA_HOME/templates}" ] || mkdir -p "${XDG_DATA_HOME/templates}"
+xdg-user-dir XDG_DATA_HOME
 
 echo "Updating current state of the users user-dirs.dir"
 xdg-user-dirs-update --force
