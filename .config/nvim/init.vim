@@ -36,6 +36,7 @@ set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
+set ma                                  " modified 
 "set autochdir                           " Your working directory will always be the same as your working directory
 
 "au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vim alternatively you can run :source $MYVIMRC
@@ -73,87 +74,7 @@ endif
 
 
 "}}}
-" vim-plug {{{
+" Sourcing other files {{{
 "================================================
-
-
-"automated installation of vimplug if not installed
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
-endif
-
-call plug#begin('$XDG_CONFIG_HOME/nvim/plugged/')
-"call plug#begin('~/.config/nvim/plugged')
-
-"plugins here, coc for example
-"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-Plug 'preservim/nerdtree'                 " a file system explorer
-
-Plug 'quantum-omega/vim-burnttoast256'    " colorscheme
-
-" Plug 'dpelle/vim-LanguageTool'           " advanced spellchecker
-Plug 'preservim/nerdcommenter'
-
-Plug 'cespare/vim-toml'                   " toml syntax
-Plug 'rust-lang/rust.vim'                 " rust files detection, syntax formatting
-
-Plug 'itchyny/lightline.vim'              " status line
-" Plug 'hoob3rt/lualine.nvim'             " status line instead of lightline
-" If you want to have icons in your statusline choose one of these
-" Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'ryanoasis/vim-devicons'
-
-call plug#end()
-
-" }}}
-" Coloring interface {{{
-"================================================
-" load it after plugins processing
-
-" syntax hightlight
-" set termguicolors
-colorscheme burnttoast256
-" colorscheme moonfly
-
-" lightline will take care about the status line
-set laststatus=2  " Always display the status line
-"set noshowmode		" No show current input mode in the status line
-"set noruler			" No show the line number on the status line
-"let g:lightline = { 'colorscheme': 'moonfly' }
-let g:lightline = { 'colorscheme': 'powerline' }
-
-" }}}
-" NERDcommenter settings {{{
-"================================================
-
-" Create default mappings
-let g:NERDCreateDefaultMappings = 1
-
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-
-" Enable NERDCommenterToggle to check all selected lines is commented or not
-let g:NERDToggleCheckAllLines = 1
-
+source $HOME/.config/nvim/plugins.vim
 " }}}
