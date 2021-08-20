@@ -18,15 +18,16 @@ echo "Unzipping archive"
 unzip  master.zip  -d "$HOME/"
 
 echo "Moving  dir structure to the homedir"
-mv dotfiles-master/.config $HOME/
-mv dotfiles-master/.local $HOME/
-mv dotfiles-master/Desktop $HOME/
-mv dotfiles-master/Documents $HOME/
-mv dotfiles-master/Downloads $HOME/
-mv dotfiles-master/Media $HOME/
-mv dotfiles-master/Projects $HOME/
-mv dotfiles-master/Public $HOME/
-mv dotfiles-master/Makefile $HOME/
+mv -v dotfiles-master/.config $HOME/
+mv -v dotfiles-master/.local $HOME/
+mv -v dotfiles-master/Desktop $HOME/
+mv -v dotfiles-master/Documents $HOME/
+mv -v dotfiles-master/Downloads $HOME/
+mv -v dotfiles-master/Media $HOME/
+mv -v dotfiles-master/Projects $HOME/
+mv -v dotfiles-master/Public $HOME/
+mv -v dotfiles-master/Makefile $HOME/
+mkdir -v $HOME/.cache
 
 echo " .... cleaning up now .... "
 
@@ -61,20 +62,12 @@ echo "Checking on XDG directories and creating them if needed"
 # [ -d "${XDG_CONFIG_HOME:-$HOME/.config}" ] || mkdir "${XDG_CONFIG_HOME}"
 # [ -d "${XDG_DATA_HOME:-$HOME/.local/share}" ] || mkdir -p "${XDG_DATA_HOME}"
 # [ -d "${XDG_DATA_HOME/templates}" ] || mkdir -p "${XDG_DATA_HOME/templates}"
-mkdir -v $HOME/cache
 
 echo "Updating current state of the users user-dirs.dir"
 xdg-user-dirs-update --force
 
-echo "checking return of xdg_cache_home, xdg_config_home, xdg_data_home"
-
-xdg-user-dir XDG_CACHE_HOME
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-xdg-user-dir XDG_CONFIG_HOME
-xdg-user-dir XDG_DATA_HOME
-
 echo "Changing permissions on 700 to .cache .config and .data"
-chmod -R 700 ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME}
+chmod -v -R 700 $HOME/.cache $HOME/.config $HOME/.local
 
 echo "check for some dotfiles, move them into ~/.local and link it"
 [ -d "$HOME/.local/.ssh" ] || mkdir -p "$HOME/.local/.ssh" && ln -s ".local/.ssh" "$HOME/"
