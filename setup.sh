@@ -17,9 +17,9 @@ wget -nc "https://github.com/orleanski/dotfiles/archive/master.zip"
 echo "Unzipping archive"
 unzip  master.zip  -d "$HOME/"
 
-echo "Moving .config dir to the homedir and creating dir structure"
-mv dotfiles-master/.config  $HOME/
-mv dotfiles-master/.local  $HOME/
+echo "Moving  dir structure to the homedir"
+mv dotfiles-master/.config $HOME/
+mv dotfiles-master/.local $HOME/
 mv dotfiles-master/Desktop $HOME/
 mv dotfiles-master/Documents $HOME/
 mv dotfiles-master/Downloads $HOME/
@@ -60,20 +60,20 @@ echo "Checking on XDG directories and creating them if needed"
 [ -d "${XDG_CACHE_HOME:-$HOME/.cache}" ] || mkdir "${XDG_CACHE_HOME}"
 [ -d "${XDG_CONFIG_HOME:-$HOME/.config}" ] || mkdir "${XDG_CONFIG_HOME}"
 [ -d "${XDG_DATA_HOME:-$HOME/.local/share}" ] || mkdir -p "${XDG_DATA_HOME}"
-[ -d "$XDG_DATA_HOME/templates" ] || mkdir -p "$XDG_DATA_HOME/templates"
+[ -d "${XDG_DATA_HOME/templates}" ] || mkdir -p "${XDG_DATA_HOME/templates}"
 
 echo "Updating current state of the users user-dirs.dir"
 xdg-user-dirs-update --force
 
 echo "Changing permissions on 700 to .cache .config and .data"
-chmod 700 ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME}
+chmod -R 700 ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME}
 
-echo "create .ssh in ~/.local and link it"
+echo "check for some dotfiles, move them into ~/.local and link it"
 [ -d "$HOME/.local/.ssh" ] || mkdir -p "$HOME/.local/.ssh" && ln -s ".local/.ssh" "$HOME/"
 [ -d "$HOME/.local/.gnupg" ] || mkdir -p "$HOME/.local/.gnupg" && ln -s ".local/.gnupg" "$HOME/"
 [ -d "$HOME/.local/.dbus" ] || mkdir -p "$HOME/.local/.dbus" && ln -s ".local/.dbus" "$HOME/"
 [ -d "$HOME/.local/.kde4" ] || mkdir -p "$HOME/.local/.kde4" && ln -s ".local/.kde4" "$HOME/"
-#[ -d "$HOME/.local/.cargo" ] || mkdir -p "$HOME/.local/.cargo" && ln -s ".local/.cargo" "$HOME/"
+[ -d "$HOME/.local/.cargo" ] || mkdir -p "$HOME/.local/.cargo" && ln -s ".local/.cargo" "$HOME/"
 
 echo ""
 echo "       Done "
