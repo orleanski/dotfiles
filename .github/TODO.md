@@ -1,6 +1,5 @@
 # TODO
 - [ ] /etc/profile.d/xdg.sh [see issue #3](https://github.com/orleanski/dotfiles/issues/3#issue-806949413)
-- [ ] .config/allacritty
 - [ ] .config/X11/.xinitrc
 - [ ] .config/X11/.Xauthority
 
@@ -20,6 +19,7 @@ installation script is ready and tested several times see [README](README.md)
 ### configs are ready to be used and some changes are still going to occur, so keep tuned
 
 - [x] .config/ag
+- [x] .config/allacritty
 - [x] .config/bash
 - [x] .config/git
 - [x] .config/htop
