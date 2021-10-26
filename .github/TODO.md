@@ -4,9 +4,9 @@
 - [ ] .config/X11/.Xauthority
 
 ## BACKLOG
-- [.] /etc/bash/bashrc
-- [.] /etc/zsh/zshenv
-- [.] .config/wgetrc <- changes are made in /etc/wgetrc (other options see [#12](https://github.com/orleanski/dotfiles/issues/12))
+- [ ] /etc/bash/bashrc
+- [ ] /etc/zsh/zshenv
+- [ ] .config/wgetrc <- changes are made in /etc/wgetrc (other options see [#12](https://github.com/orleanski/dotfiles/issues/12))
 
 also, please see [issues](https://github.com/orleanski/dotfiles/issues) with some ideas
 
