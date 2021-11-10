@@ -49,6 +49,13 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s cdspell		# correct minor spelling errors in cd
   shopt -s globstar		# enable **
 fi
+
+# change cursor shape or color to indicate vi mode in bash
+set -o vi								# switching to vi on ESC and back to edit by a
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
+
 # }}}
 
 # Check and source aliases, functions and apps {{{
@@ -80,20 +87,10 @@ PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 # PROMPT {{{
 #================================================
-# change cursor shape or color to indicate vi mode in bash
-set -o vi								# switching to vi on ESC and back to edit by a
-set show-mode-in-prompt on
-set vi-cmd-mode-string "\1\e[2 q\2"
-set vi-ins-mode-string "\1\e[6 q\2"
+# keep prompt in the separate file
+[ -f "$XDG_CONFIG_HOME"/bash/prompt.sh ] && source ${XDG_CONFIG_HOME}/bash/prompt.sh
+#[ -f "$XDG_CONFIG_HOME"/bash/starship.sh ] && source ${XDG_CONFIG_HOME}/bash/starship.sh
 
-
-if [ $(id -u) -eq 0 ];
-then # you are root, set red colour prompt
-  PS1="\\[$(tput setaf 1)\\]\\u@\$(hostname -f):\\[$(tput sgr0)\\]\\w \n# "
-else # normal
-#  PS1="[\\u@\\h:\\w] $ "
-PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;2m\]\H\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\]\n\\$\[$(tput sgr0)\] "
-fi
 # }}}
 
 ## Console Settigs {{{

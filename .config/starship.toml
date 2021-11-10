@@ -1,0 +1,135 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[username]
+style_user = "green"
+style_root = "red"
+format = "[$user]($style)@"
+disabled = false
+show_always = true
+
+[hostname]
+style = "bold yellow"
+format = "[$hostname]($style) "
+trim_at = ""
+ssh_only = false
+disabled = false
+
+[directory]
+style = "cyan"
+format = ": [$path]($style) "
+read_only = " ro"
+
+
+# Plain Text Symbols {{{
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vicmd_symbol = "[<](bold green)"
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[aws]
+symbol = "aws "
+
+[cobol]
+symbol = "cobol "
+
+[conda]
+symbol = "conda "
+
+[crystal]
+symbol = "cr "
+
+[cmake]
+symbol = "cmake "
+
+[dart]
+symbol = "dart "
+
+[deno]
+symbol = "deno "
+
+[dotnet]
+symbol = ".NET "
+
+
+[docker_context]
+symbol = "docker "
+
+[elixir]
+symbol = "exs "
+
+[elm]
+symbol = "elm "
+
+[git_branch]
+symbol = "git "
+
+[golang]
+symbol = "go "
+
+[hg_branch]
+symbol = "hg "
+
+[java]
+symbol = "java "
+
+[julia]
+symbol = "jl "
+
+[kotlin]
+symbol = "kt "
+
+[nodejs]
+symbol = "nodejs "
+
+[memory_usage]
+symbol = "memory "
+
+[nim]
+symbol = "nim "
+
+[nix_shell]
+symbol = "nix "
+
+[ocaml]
+symbol = "ml "
+
+[package]
+#symbol = "pkg "
+# Disable the package module, hiding it from the prompt completely
+disabled = true
+
+[perl]
+symbol = "pl "
+
+[php]
+symbol = "php "
+
+[purescript]
+symbol = "purs "
+
+[python]
+symbol = "py "
+
+[ruby]
+symbol = "rb "
+
+[rust]
+symbol = "rs "
+
+[scala]
+symbol = "scala "
+
+[swift]
+symbol = "swift "
+# }}}
