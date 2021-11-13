@@ -63,8 +63,9 @@ ddlist: ##{{{ Make list of Deep NewUse updates with deps in emrg.txt
 	less emrg.txt
 # }}}
 newmirrors: ##{{{ Find fastest mirrors and save in mirror.txt
-	mirrorselect -c USA -b10 -o > mirrors.txt; \
+	mirrorselect -b10 -o > mirrors.txt; \
 	less mirrors.txt
+	# mirrorselect -c USA -b10 -o > mirrors.txt; \
 # }}}
 fxorgdrv: ##{{{ Fetches and reinstalls drivers and xorg-server
 	emerge -1vf $$(eix --only-names -I xf86- -C x11-drivers); \

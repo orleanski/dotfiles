@@ -1,6 +1,6 @@
 # Apps {{{
 #================================================
-# export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
+export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
 
 #export LESSHISTFILE=-												# No less history (~/.lesshst file)
 # lesskey is binary file generated with lesskey from ~/.lesskey,
