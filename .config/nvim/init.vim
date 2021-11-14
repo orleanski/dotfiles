@@ -17,7 +17,9 @@ set iskeyword+=-                        " treat dash separated words as a word t
 set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
-set t_Co=256                            " Support 256 colors
+set termguicolors                       " for truecolors in supported terminal (echo $TERM gives alacritty-direct with tmux-direct)
+"set t_Co=256                            " for 256 colors terminals
+"colorscheme see sources from plugins.vim
 set conceallevel=0                      " So that I can see `` in markdown files
 set tabstop=2                           " Insert 2 spaces for a tab
 set shiftwidth=2                        " Change the number of space characters inserted for indentation
@@ -25,7 +27,7 @@ set smarttab                            " Makes tabbing smarter will realize you
 set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
-set number                              " Line numbers
+"set number                              " Line numbers
 "set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set showtabline=0                       " do you want to see tabs [0|1|2]

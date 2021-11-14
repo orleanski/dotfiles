@@ -14,14 +14,15 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+ env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  TERM: alacritty-direct
+  #TERM: xterm-256color 
 
 #window:
   # Window dimensions (changes require restart)
@@ -112,6 +113,7 @@
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     family: Anonymous Pro
+    # family: OfficeCodePro
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -123,6 +125,7 @@
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     family: Anonymous Pro
+    # family: OfficeCodePro
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -134,6 +137,7 @@
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     family: Anonymous Pro
+    # family: OfficeCodePro
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -145,6 +149,7 @@
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     family: Anonymous Pro
+    # family: OfficeCodePro
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic

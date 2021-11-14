@@ -18,6 +18,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'preservim/nerdtree'                 " a file system explorer
 
 Plug 'quantum-omega/vim-burnttoast256'    " colorscheme
+Plug 'ayu-theme/ayu-vim'                  " colorscheme
 
 " Plug 'dpelle/vim-LanguageTool'           " advanced spellchecker
 Plug 'preservim/nerdcommenter'
@@ -26,7 +27,7 @@ Plug 'cespare/vim-toml'                   " toml syntax
 Plug 'rust-lang/rust.vim'                 " rust files detection, syntax formatting
 
 Plug 'itchyny/lightline.vim'              " status line
-" Plug 'hoob3rt/lualine.nvim'             " status line instead of lightline
+" Plug 'nvim-lualine/lualine.nvim'          " status line
 " If you want to have icons in your statusline choose one of these
 " Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'ryanoasis/vim-devicons'
@@ -39,9 +40,9 @@ call plug#end()
 " load it after plugins processing
 
 " syntax hightlight
-" set termguicolors
-colorscheme burnttoast256
-" colorscheme moonfly
+" set termguicolors (is in settings)
+" colorscheme burnttoast256
+colorscheme ayu
 
 " lightline will take care about the status line
 set laststatus=2  " Always display the status line
