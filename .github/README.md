@@ -49,6 +49,10 @@ just let it finish installation close vim and open it again, vim will start quic
 ##### Vim plugins
 ![vim plugins](vim_plugins.png?raw=true)
 
+#### Truecolors
+Combination of Alacritty + Tmux + Neovim now uses truecolors with alacrity-direct, tmux-direct and termguicolors in respective config files
+For TTY, kmscon could be a solution, but I am holding it off for now, since it is a rare event when I have to login to the console under a user. 
+For ssh access putty works well with truecolors.
 
 ## Makefile
 This is my memory aid.
