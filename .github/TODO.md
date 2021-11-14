@@ -2,11 +2,14 @@
 - [ ] /etc/profile.d/xdg.sh [see issue #3](https://github.com/orleanski/dotfiles/issues/3#issue-806949413)
 - [ ] .config/X11/.xinitrc
 - [ ] .config/X11/.Xauthority
+- [ ] .config/i3/
+- [ ] .config/i3status/
 
 ## BACKLOG
 - [ ] /etc/bash/bashrc
 - [ ] /etc/zsh/zshenv
 - [ ] .config/wgetrc <- changes are made in /etc/wgetrc (other options see [#12](https://github.com/orleanski/dotfiles/issues/12))
+- [ ] .config/nvim/ convert vim -> lua based config
 
 also, please see [issues](https://github.com/orleanski/dotfiles/issues) with some ideas
 
@@ -20,7 +23,7 @@ installation script is ready and tested several times see [README](README.md)
 
 - [x] .config/ag
 - [x] .config/allacritty
-- [x] .config/bash
+- [x] .config/bash with no emojis starship or classical prompt (one line comment in the config)
 - [x] .config/git
 - [x] .config/htop
 - [x] .config/less
