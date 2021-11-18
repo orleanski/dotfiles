@@ -38,7 +38,7 @@ function lowercase()  # move filenames to lowercase
 }
 
 # Automatically do an ls after each cd
-cd() { builtin cd "$@" && ls -alhF --color --group-directories-first; }
+cd() { builtin cd "$@" && ls -AlhFX --color --group-directories-first; }
 
 # Get IP addressess
 myip(){
@@ -50,5 +50,6 @@ myip(){
 httpserve(){
 	python -m http.server --bind `ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'` --directory ./ 8000
 }
+
 
 # }}}
