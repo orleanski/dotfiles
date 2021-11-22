@@ -76,16 +76,29 @@ chmod -v -R 700 $HOME/.cache $HOME/.config $HOME/.local
 # [ -d "$HOME/.local/.kde4" ] || mkdir -p "$HOME/.local/.kde4" && ln -s ".local/.kde4" "$HOME/"
 #[ -d "$HOME/.local/.cargo" ] || mkdir -p "$HOME/.local/.cargo" && ln -s ".local/.cargo" "$HOME/"
 
-echo ""
-echo "       Done "
-echo "it's time for the POST INSTALL steps"
-echo "- please add xdg.sh to /etc/profile.d/"
-echo "- please change /etc/bash/bashrc and let it read our bashrc"
-echo "- emerge -avq --noreplace eselect-repository doas tmux vim bash-completion xdg-user-dirs dev-vcs/git"
-echo "- emerge app-shells/starship from repository guru"
-echo "- logout and log back in"
-echo "- run nvim and :PlugInstall"
-echo "and you should be set"
-echo " Goodbye now ... "
-echo ""
+echo ''
+echo '       Done '
+echo 'it's time for the POST INSTALL steps'
+echo '- please add xdg.sh to /etc/profile.d/'
+echo '- please change /etc/bash/bashrc and let it read our bashrc'
+echo '- to install additional software lets create extra file ~/install-enviroment.list'
+echo 'app-eselect/eselect-repository' >> install-enviroment.list
+echo 'app-admin/doas' >> install-enviroment.list
+echo 'app-mist/tmux' >> install-enviroment.list
+echo 'app-editor/neovim' >> install-enviroment.list
+echo 'app-sheels/bash-completion' >> install-enviroment.list
+echo 'x11-misc/xdg-user-dirs' >> install-enviroment.list
+echo 'dev-vcs/git' >> install-enviroment.list
+echo 'dev-lang/rust' >> install-enviroment.list
+echo 'virtual/rust' >> install-enviroment.list
+echo '- app-shells/starship is from repository guru'
+echo 'app-shells/starship' >> install-enviroment.list
+echo '' >> install-enviroment.sh
+echo 'emerge $(< install-enviroment.list)' 
+echo '- emerge -avq --noreplace eselect-repository doas tmux neovim bash-completion xdg-user-dirs dev-vcs/git'
+echo '- to restart bash run exec bash -l'
+echo '- run nvim and :PlugInstall'
+echo 'and you should be set'
+echo ' Goodbye now ... '
+echo ''
 # read -e -n 1 -p "press any key to continue" \n;
