@@ -1,6 +1,8 @@
 # Apps {{{
 #================================================
-export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
+# nvim recognizes ${XDG_CONFIG_HOME}/nvim/init.vim out of the box, but respect VIMITIN and uses vim config
+# if you want vim by itself please uncomment this line
+#export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
 
 #export LESSHISTFILE=-												# No less history (~/.lesshst file)
 # lesskey is binary file generated with lesskey from ~/.lesskey,
