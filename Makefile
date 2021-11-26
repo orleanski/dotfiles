@@ -136,7 +136,4 @@ swap: ##{{{ create and activate 5G /.swapfile
 	swapon /.swapfile; \
 	swapon --show
 #}}}
-weather: ##{{{ check weather in Pago Pago
-	curl wttr.in/Pago_Pago
-# }}}
 
