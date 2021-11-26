@@ -52,8 +52,13 @@ httpserve(){
 }
 
 # check weather
+# Special URLs:
+#     /:help                  # show this page
+#     /:bash.function         # show recommended bash function wttr()
+#     /:translation           # show the information about the translators
+# will check only current weather
 weather(){
-	curl wttr.in/Pago_Pago
+	curl wttr.in/Pago_Pago?0
 }
 
 # }}}
