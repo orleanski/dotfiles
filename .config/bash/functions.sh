@@ -58,7 +58,8 @@ httpserve(){
 #     /:translation           # show the information about the translators
 # will check only current weather
 weather(){
-	curl wttr.in/PPG?format=4
+	# curl wttr.in/PPG?format=4
+	curl wttr.in/PPG?0
 }
 
 # }}}
