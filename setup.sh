@@ -80,8 +80,8 @@ chmod -v -R 700 $HOME/.cache $HOME/.config $HOME/.local
 echo ""
 echo "       Done "
 echo "it's time for the POST INSTALL steps"
-echo "- please add xdg.sh to /etc/profile.d/"
-echo "- please change /etc/bash/bashrc and let it read our bashrc"
+echo "- please add xdg.sh to /etc/profile.d/ see .config/sys_etc/profile.d/"
+echo "- please change /etc/bash/bashrc and let it read our bashrc see .config/sys_etc/bash/"
 echo "- to install additional software lets create extra file ~/install-enviroment.list"
 echo "app-eselect/eselect-repository" >> install-enviroment.list
 echo "app-admin/doas" >> install-enviroment.list
