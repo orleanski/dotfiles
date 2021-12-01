@@ -1,8 +1,6 @@
 # Apps {{{
 #================================================
-# nvim recognizes ${XDG_CONFIG_HOME}/nvim/init.vim out of the box, but respect VIMITIN and uses vim config
-# if you want vim by itself please uncomment this line
-#export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
+# export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
 
 #export LESSHISTFILE=-												# No less history (~/.lesshst file)
 # lesskey is binary file generated with lesskey from ~/.lesskey,
@@ -17,8 +15,25 @@ export GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
 
 export INPUTRC=${XDG_CONFIG_HOME}/readline/inputrc
 
+export ICEAUTHORITY="${XDG_CACHE_HOME}/ICEauthority"
+
 export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 
+# for dircolors from sys-apps/coreutils
+# thats if you would like non standard colors
+#eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
+
 #export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
+
+export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+
+# set PATH so it includes user's cargo bin if it exists
+if [ -d "$CARGO_HOME/bin" ] ; then
+    PATH="$CARGO_HOME/bin:$PATH"
+fi
+
+
 #}}}
 
