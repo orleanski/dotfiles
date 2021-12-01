@@ -22,6 +22,7 @@ installation script is ready and tested several times see [README](README.md)
 - [x] ~/.config/ag
 - [x] ~/.config/allacritty
 - [x] ~/.config/bash with no emojis starship or classical prompt (to switch comment one line in the config)
+- [x] ~/.config/bat
 - [x] ~/.config/git
 - [x] ~/.config/htop
 - [x] ~/.config/less
