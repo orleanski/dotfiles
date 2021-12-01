@@ -94,6 +94,7 @@ echo "dev-lang/rust" >> install-enviroment.list
 echo "virtual/rust" >> install-enviroment.list
 echo "- the app-shells/starship is from repository guru, so enable the repo"
 echo "app-shells/starship" >> install-enviroment.list
+echo "sys-apps/bat" >> install-enviroment.list
 echo "" >> install-enviroment.list
 echo 'emerge $(< install-enviroment.list)' 
 echo "- to restart bash run exec bash -l"
