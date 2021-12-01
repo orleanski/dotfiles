@@ -1,6 +1,7 @@
 # Aliases {{{
 #================================================
 alias tmux='tmux -2 -u'
+alias b='exec bash -l'
 alias nano='nano -w'
 alias l='ls -AlhFX --color --group-directories-first'
 alias lc='ls -ahFX --color --group-directories-first'
