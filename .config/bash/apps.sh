@@ -1,19 +1,19 @@
 # Apps {{{
 #================================================
-# export VIMINIT="source ${XDG_CONFIG_HOME}/vim/vimrc"
+# export VIMINIT="source "${XDG_CONFIG_HOME}/vim/vimrc""
 
-#export LESSHISTFILE=-												# No less history (~/.lesshst file)
+#export LESSHISTFILE=-			# No less history (~/.lesshst file)
 # lesskey is binary file generated with lesskey from ~/.lesskey,
 # then copy, also can be uses as /etc/sysless
 export LESSKEY="${XDG_CONFIG_HOME}/less/lesskey"
 
 # check if directory doesn't exist, then create it
-[[ -d ${XDG_DATA_HOME}/less ]] || mkdir -p ${XDG_DATA_HOME}/less
+[[ -d "${XDG_DATA_HOME}/less" ]] || mkdir -p ${XDG_DATA_HOME}/less
 export LESSHISTFILE="${XDG_DATA_HOME}/less/history"
 
-export GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
+export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 
-export INPUTRC=${XDG_CONFIG_HOME}/readline/inputrc
+export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
 
 export ICEAUTHORITY="${XDG_CACHE_HOME}/ICEauthority"
 
@@ -21,7 +21,7 @@ export ICEAUTHORITY="${XDG_CACHE_HOME}/ICEauthority"
 
 #export XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
 
-export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
+export MYSQL_HISTFILE="${XDG_DATA_HOME}/mysql_history"
 
 # for dircolors from sys-apps/coreutils
 # thats if you would like non standard colors
