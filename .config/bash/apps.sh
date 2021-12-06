@@ -17,6 +17,8 @@ export INPUTRC=${XDG_CONFIG_HOME}/readline/inputrc
 
 export ICEAUTHORITY="${XDG_CACHE_HOME}/ICEauthority"
 
+export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
+
 export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 
 # for dircolors from sys-apps/coreutils
