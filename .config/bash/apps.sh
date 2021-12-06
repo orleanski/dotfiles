@@ -17,7 +17,9 @@ export INPUTRC=${XDG_CONFIG_HOME}/readline/inputrc
 
 export ICEAUTHORITY="${XDG_CACHE_HOME}/ICEauthority"
 
-export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
+export XAUTHORITY="${XDG_CACHE_HOME}/Xauthority"
+
+export XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
 
 export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 
