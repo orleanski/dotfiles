@@ -12,15 +12,12 @@ endif
 "call plug#begin('$XDG_CONFIG_HOME/nvim/plugged/')
 call plug#begin('~/.local/share/nvim/site/plugged')
 
-"plugins here, coc for example
-"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-Plug 'preservim/nerdtree'                 " a file system explorer
-
 "Plug 'quantum-omega/vim-burnttoast256'    " colorscheme
 Plug 'ayu-theme/ayu-vim'                  " colorscheme
 
 " Plug 'dpelle/vim-LanguageTool'           " advanced spellchecker
+" Plug 'preservim/nerdtree'                 " a file system explorer
+
 Plug 'preservim/nerdcommenter'
 " Create default mappings
   let g:NERDCreateDefaultMappings = 1
@@ -41,13 +38,30 @@ Plug 'preservim/nerdcommenter'
 " Enable NERDCommenterToggle to check all selected lines is commented or not
   let g:NERDToggleCheckAllLines = 1
 
+"plugins here, coc for example
+"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+
+" " deoplete 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+
+
 Plug 'sirver/ultisnips'
   let g:UltiSnipsExpandTrigger = '<tab>'
-  let g:UltiSnipsJumpForwardTrigger = '<tab>'
-  let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+  let g:UltiSnipsListSnippets = '<c-tab>'
+  let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+  let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+" `my-snippets` is the directory in the nvim/my-snippets
+  let g:UltiSnipsSnippetDirectories=["UltiSnips", "my-snippets"]
 
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+
+" Just call :SnipBar and it will open a scratch buffer to the right, 40
+" columns width, with all the snippets that are available for the current
+" file.
+Plug 'robertbasic/snipbar'
 
 " Plug 'lervag/vimtex'                     " filetype plugin for LaTeX
 "   let g:tex_flavor='latex'
@@ -59,8 +73,10 @@ Plug 'honza/vim-snippets'
 "   let g:tex_conceal='abdmg'
 "   hi Conceal ctermbg=none
 
+
 Plug 'cespare/vim-toml'                   " toml syntax
 Plug 'rust-lang/rust.vim'                 " rust files detection, syntax formatting
+Plug 'NoahTheDuke/vim-just'               " syntax highlighting for justfiles
 
 " Plug 'nvim-lualine/lualine.nvim'          " status line
 " If you want to have icons in your statusline choose one of these
@@ -75,7 +91,6 @@ Plug 'itchyny/lightline.vim'
   let g:lightline = { 'colorscheme': 'powerline' }
 " let g:lightline = { 'colorscheme': 'moonfly' }
 
-Plug 'NoahTheDuke/vim-just'               " syntax highlighting for justfiles
 
 call plug#end()
 

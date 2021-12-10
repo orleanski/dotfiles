@@ -1,0 +1,52 @@
+# Snippets help {{{
+# Snippets are really easy to add! Below is an example…
+#
+# snippet fn "function" b
+# function ${1:functionName}(${2:arguements}) {
+#   $0
+# }
+# endsnippet
+#
+# Lets walk through the syntax.
+#
+#     “snippet” — the start of your snippet
+#     “fn” — the trigger word for your snippet. Type “fn” in insert mode, and then press your expand shortcut to substitute it with the full snippet (“control + s” in my case).
+#     “function” — a description of the snippet, visible in YCM’s menu.
+#     “b” — best to read the docs for this, but essentially snippet only expands if it is the first characters on a new line i.e. “fn” cannot have any preceeding text, tabs and spaces are ok though!
+#     “${1:functionName}” — the first piece of text in the snippet the user can customize, defaults to “functionName”. After pressing your jump forward shortcut (“control + j” in my case) the first time, this is the text you will be able to edit.
+#     “${2:arguements}” — the second piece of text in the snippet the user can customize, defaults to “functionName”.
+#     “$0” — where the cursor will end up after you’re done editing the snippet text (after you’ve pressed the jump forward shortcut three times)
+#     “endsnippet” — the end of your snippet text.
+#
+# Note: you can also just use “$1”, “$2” etc… if you want to insert text in your snippet but don’t need a placeholder.
+# the doc for "b" flag is here https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt#L665
+
+
+# This file contains snippets that are always defined. I personally
+# have snippets for signatures and often needed texts
+
+# sligthly lower priority than everything else since specialized versions
+# should overwrite. The user needs to adjust her priority in her snippets to
+# ~-55 so that other filetypes will still overwrite.
+# }}}
+priority -60
+
+snippet dmn "FirstName LastName" A
+FirstName LastName$0
+endsnippet
+
+snippet dme "FirstName LastName <email>" A
+FirstName LastName <email>$0
+endsnippet
+
+# add this snippet into 
+# .local/share/nvim/site/plugged/vim-snippets/UltiSnips/all.snippets 
+# so if will properly identify folding markers and comment symbols
+#
+# snippet foldu "Insert a vim fold marker pair with Underlinging if the fold description" b
+# `!p snip.rv = get_comment_format()[0]` ${1:Fold description} `!p snip.rv = foldmarker()[0]`
+# `!p snip.rv = get_comment_format()[0]` =========================================================
+# ${2:${VISUAL:Content}}
+# `!p snip.rv = get_comment_format()[0]` `!p snip.rv = foldmarker()[1]` $1
+# endsnippet
+
