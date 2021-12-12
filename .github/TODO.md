@@ -1,6 +1,6 @@
 # TODO
 - [ ] ~/.config/X11/.xinitrc
-- [ ] ~/.config/X11/.Xauthority
+- [ ] ~/.cache/.Xauthority
 - [ ] ~/.config/i3/
 - [ ] ~/.config/i3status/
 
