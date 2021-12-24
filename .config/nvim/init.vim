@@ -6,7 +6,7 @@ let g:mapleader = "\<Space>"
 
 syntax enable                           " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
-set nowrap                              " Display long lines as just one line
+"set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
@@ -51,6 +51,33 @@ set foldenable          " enable folding
 set foldmethod=marker
 set foldlevel=0
 "}}}
+" Spelling {{{
+" languages
+set spelllang=en,ru
+" show 9 spell checking candidates at most
+set spellsuggest=best,9
+" to enable spell checking run command ':set spell'
+" other option to toggle spell checking is F11
+nnoremap <silent> <F11> :set spell!<cr>
+inoremap <silent> <F11> <C-O>:set spell!<cr>
+" Correct spell errors
+" In insert mode, if you have typed a word which Vim thinks is miss-spelled, an
+" underline is shown below. To correct this error, press <C-x> followed by s. A
+" completion menu will show a list of suggestions. You can then choose the
+" correct one.
+"
+" In normal mode, to navigate between possible spell errors, use the following
+" shortcut:
+"
+"     [s: go to previous spell error
+"     ]s: go to next spell error
+"
+" The built-in spell checker is not perfect and can create false positives
+" easily. If you think a word is not a spell error, you can use zg to add it to
+" your spell file. To correct an error, press z=. A list of candidate words will
+" be shown. You are prompted to enter a number to select the correct one. Or you
+" may use 1z= to choose the first candidate directly.
+" }}}
 " Highlighting and search {{{
 "================================================
 " Needed for Syntax Highlighting and stuff
