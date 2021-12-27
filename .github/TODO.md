@@ -27,6 +27,7 @@ installation script is ready and tested several times see [README](README.md)
 - [x] ~/.config/htop
 - [x] ~/.config/less
 - [x] ~/.config/neofetch
+- [x] ~/.config/macchina 
 - [x] ~/.config/nvim with vim-plug auto-install
 - [x] ~/.config/readline
 - [x] ~/.config/tmux
