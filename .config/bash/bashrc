@@ -22,7 +22,8 @@ fi
 # TimeZone and Locale {{{
 #================================================
 # Define Time Zone BIOS clock set in UTC
-TZ='Pacific/Pago_Pago'; export TZ
+# please set via eselect timezone 
+#TZ='Pacific/Pago_Pago'; export TZ
 LANG='en_US.utf8'; export LANG
 #}}}
 
