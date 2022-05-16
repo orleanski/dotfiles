@@ -25,4 +25,14 @@
   # Allow to move to backward/forward of word
   bindkey '^b' backward-word
   bindkey '^f' forward-word
+
+  ## Page UP and Page Down through History
+autoload -Uz history-search-end
+
+zle -N history-beginning-search-backward-end \
+                history-search-end
+zle -N history-beginning-search-forward-end \
+                history-search-end
+bindkey "\e[5~" history-beginning-search-backward-end
+bindkey "\e[6~" history-beginning-search-forward-end
 # }}}
