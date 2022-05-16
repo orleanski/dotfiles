@@ -1,7 +1,25 @@
 # Functions {{{
 #================================================
+
+# Automatically do an ls after each cd
+cd() { builtin cd "$@" && ls -AlhFX --color --group-directories-first; }
+
+
 # Create a directory and change into it
 mkcd () { mkdir -p "$@" && cd "$@"; }
+
+
+# recursively chmod a directory so that:
+# chmodd Directories are 0775
+# chmodf Files are 0664
+chmodd() { 
+  find . -type d -exec chmod 0755 {} + 
+}
+
+chmodf() { 
+  find . -type f -exec chmod 0644 {} + 
+}
+
 
 # Nice history output
 H() {
@@ -36,9 +54,6 @@ function lowercase()  # move filenames to lowercase
         fi
     done
 }
-
-# Automatically do an ls after each cd
-cd() { builtin cd "$@" && ls -AlhFX --color --group-directories-first; }
 
 # Get IP addressess
 myip(){
