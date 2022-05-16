@@ -14,5 +14,18 @@ function h() {
 # Automatically ls after you cd 
 function chpwd() { 
     emulate -L zsh 
-	ls -alhF --color=always --group-directories-first
+	ls -AlhFX --color=always --group-directories-first
 }
+
+
+# recursively chmod a directory so that:
+# chmodd Directories are 0775
+# chmodf Files are 0664
+chmodd() { 
+  find . -type d -exec chmod 0755 {} + 
+}
+
+chmodf() { 
+  find . -type f -exec chmod 0644 {} + 
+}
+

@@ -7,8 +7,8 @@ setopt allexport 			# all parameters defined below are exported
 
 # History options {{{
 #================================================
-[ -d "$XDG_DATA_HOME"/zsh ] || mkdir -p "$XDG_DATA_HOME"/zsh
-HISTFILE="$XDG_DATA_HOME"/zsh/history
+[ -d "$XDG_DATA_HOME"/shell ] || mkdir -p "$XDG_DATA_HOME"/shell
+HISTFILE="$XDG_DATA_HOME"/shell/history
 HISTSIZE=4096
 SAVEHIST=$HISTSIZE
 HISTIGNORE='&:clear:ls:cd:[bf]g:exit:[ t\]*'

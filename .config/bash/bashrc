@@ -22,8 +22,8 @@ fi
 # TimeZone and Locale {{{
 #================================================
 # Define Time Zone BIOS clock set in UTC
-# please set via eselect timezone 
 #TZ='Pacific/Pago_Pago'; export TZ
+#TZ='US/Central'; export TZ
 LANG='en_US.utf8'; export LANG
 #}}}
 
@@ -74,9 +74,9 @@ set vi-ins-mode-string "\1\e[6 q\2"
 # History tuneup {{{
 #================================================
 # check if directory doesn't exist, then create it
-[[ -d ${XDG_DATA_HOME}/bash ]] || mkdir -p ${XDG_DATA_HOME}/bash
-export HISTFILE=${XDG_DATA_HOME}/bash/history
-export HISTCONTROL=ignoredups:erasedups
+[[ -d ${XDG_DATA_HOME}/shell ]] || mkdir -p ${XDG_DATA_HOME}/shell
+export HISTFILE=${XDG_DATA_HOME}/shell/history
+export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="ls:ps:history"
 export HISTTIMEFORMAT="%F %T "
 # When the shell exits, append to the history file instead of overwriting it
@@ -89,8 +89,8 @@ PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 # PROMPT {{{
 #================================================
 # keep prompt in the separate file
-[ -f "$XDG_CONFIG_HOME"/bash/prompt.sh ] && source ${XDG_CONFIG_HOME}/bash/prompt.sh
-#[ -f "$XDG_CONFIG_HOME"/bash/starship.sh ] && source ${XDG_CONFIG_HOME}/bash/starship.sh
+#[ -f "$XDG_CONFIG_HOME"/bash/prompt.sh ] && source ${XDG_CONFIG_HOME}/bash/prompt.sh
+[ -f "$XDG_CONFIG_HOME"/bash/starship.sh ] && source ${XDG_CONFIG_HOME}/bash/starship.sh
 
 # }}}
 
