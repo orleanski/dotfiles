@@ -12,8 +12,8 @@
 [ -f "$XDG_CONFIG_HOME"/zsh/completion.zsh ] && source "$XDG_CONFIG_HOME"/zsh/completion.zsh
 [ -f "$XDG_CONFIG_HOME"/zsh/keys.zsh ] && source "$XDG_CONFIG_HOME"/zsh/keys.zsh
 [ -f "$XDG_CONFIG_HOME"/zsh/apps.zsh ] && source "$XDG_CONFIG_HOME"/zsh/apps.zsh
-#[ -f "$XDG_CONFIG_HOME"/zsh/prompt.zsh ] && source "$XDG_CONFIG_HOME"/zsh/prompt.zsh
 [ -f "$XDG_CONFIG_HOME"/zsh/starship.zsh ] && source "$XDG_CONFIG_HOME"/zsh/starship.zsh
+#[ -f "$XDG_CONFIG_HOME"/zsh/prompt.zsh ] && source "$XDG_CONFIG_HOME"/zsh/prompt.zsh
 # }}}
 
 #  Tmux {{{

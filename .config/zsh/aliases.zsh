@@ -1,11 +1,11 @@
 # Aliases {{{
 #================================================
 alias tmux='tmux -2 -u'
-alias s='exec bash -l'
+alias s='exec zsh -l'
 alias nano='nano -w'
 alias l='ls -AlhFX --color=always --group-directories-first'
 alias lc='ls -AhFX --color=always --group-directories-first'
-alias ll='ls -AlhFX --color=always --group-directories-first | less'
+alias ll='ls -AlhFX --color=always --group-directories-first | bat'
 alias l1='ls -a1 --color=always --group-directories-first'
 alias c='echo "==============================" && echo $TZ && date && echo "==============================" && cal -m -3'
 alias h='history'
