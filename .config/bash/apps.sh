@@ -23,6 +23,8 @@ export XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
 
 export MYSQL_HISTFILE=${XDG_DATA_HOME}/mysql_history
 
+export LYNX_CFG_PATH="{$XDG_CONFIG_HOME}"/lynx/lynx.cfg
+
 # for dircolors from sys-apps/coreutils
 # thats if you would like non standard colors
 #eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
