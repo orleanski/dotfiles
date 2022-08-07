@@ -14,10 +14,10 @@ fi
 
 # check and source config files in order {{{
 #================================================
-[ -f "$XDG_CONFIG_HOME"/shell_common_cfg/env.sh ]       && source "$XDG_CONFIG_HOME"/shell_common_cfg/env.sh
-[ -f "$XDG_CONFIG_HOME"/shell_common_cfg/aliases.sh ]   && source "$XDG_CONFIG_HOME"/shell_common_cfg/aliases.sh
-[ -f "$XDG_CONFIG_HOME"/shell_common_cfg/apps.sh ]      && source "$XDG_CONFIG_HOME"/shell_common_cfg/apps.sh
-[ -f "$XDG_CONFIG_HOME"/shell_common_cfg/functions.sh ] && source "$XDG_CONFIG_HOME"/shell_common_cfg/functions.sh
+[ -f "$XDG_CONFIG_HOME"/profile/env.sh ]       && source "$XDG_CONFIG_HOME"/profile/env.sh
+[ -f "$XDG_CONFIG_HOME"/profile/aliases.sh ]   && source "$XDG_CONFIG_HOME"/profile/aliases.sh
+[ -f "$XDG_CONFIG_HOME"/profile/apps.sh ]      && source "$XDG_CONFIG_HOME"/profile/apps.sh
+[ -f "$XDG_CONFIG_HOME"/profile/functions.sh ] && source "$XDG_CONFIG_HOME"/profile/functions.sh
 [ -f "$XDG_CONFIG_HOME"/zsh/options.zsh ]               && source "$XDG_CONFIG_HOME"/zsh/options.zsh
 [ -f "$XDG_CONFIG_HOME"/zsh/keys.zsh ]                  && source "$XDG_CONFIG_HOME"/zsh/keys.zsh
 [ -f "$XDG_CONFIG_HOME"/zsh/completion.zsh ]            && source "$XDG_CONFIG_HOME"/zsh/completion.zsh
