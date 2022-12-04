@@ -84,6 +84,9 @@ fmod: ##{{{ Find all compiled modules for a specific kernel version
 fdups: ##{{{ Find slotted packages
 	equery list --duplicates "*"
 #}}}
+dedup: ##{{{ Try to prune slotted packages
+	emerge -avq --prune $(equery --quiet list --duplicates "*")
+#}}}
 swipekde: ##{{{ Remove kde4 traces from /root/ directory
 	rm -rf .config/akonadi/
 	rm -rf .config/autostart/
