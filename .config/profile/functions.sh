@@ -12,10 +12,10 @@ rh() {
 }
 
 # Automatically ls after you cd 
-function chpwd() { 
-    emulate -L zsh 
-	ls -AlhFX --color=always --group-directories-first
-}
+# function chpwd() {
+#     emulate -L zsh
+#   ls -AlhFX --color=always --group-directories-first
+# }
 
 
 # recursively chmod a directory so that:
