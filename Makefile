@@ -63,9 +63,8 @@ ddlist: ##{{{ Make list of Deep NewUse updates with deps in emrg.txt
 	less emrg.txt
 # }}}
 newmirrors: ##{{{ Find fastest mirrors and save in mirror.txt
-	mirrorselect -b10 -o > mirrors.txt; \
+	mirrorselect -b20 -o > mirrors.txt; \
 	less mirrors.txt
-	# mirrorselect -c USA -b10 -o > mirrors.txt; \
 # }}}
 fxorgdrv: ##{{{ Fetches and reinstalls drivers and xorg-server
 	emerge -1vf $$(eix --only-names -I xf86- -C x11-drivers); \
@@ -97,7 +96,7 @@ swipekde: ##{{{ Remove kde4 traces from /root/ directory
 	rm -rf .gstreamer*
 #}}}
 clean: ##{{{ cleanup distfiles dir
-	rm -f /var/cache/distfiles/*.{bz2,gz,crate,run,tgz,tbz2,cab,lzma,xpi,xz,zip,deb,mod,asc,patch,test,gem,sig}; \
+	rm -f /var/cache/distfiles/*.{bz2,gz,crate,run,tgz,tbz2,cab,lzma,xpi,xz,zip,deb,mod,asc,patch,test,whl,gem,sig,sign}; \
 	rm -f /var/cache/distfiles/*_checksum*; \
 	ls -al /var/cache/distfiles/
 # }}}
