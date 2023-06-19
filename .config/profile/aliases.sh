@@ -1,6 +1,7 @@
 # Aliases {{{
 #================================================
 alias tmux='tmux -2 -u'
+alias zellij='zellij -s lyr'
 alias s='exec $SHELL -l'
 alias nano='nano -w'
 #alias l='ls -AlhF --color=always --group-directories-first'
