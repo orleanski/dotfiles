@@ -15,20 +15,10 @@
 #================================================
 # eval "$(zellij setup --generate-auto-start zsh)"
 # zellij + automatically attach
-#export ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"
 export ZELLIJ_AUTO_ATTACH=true
-#echo 'eval "$(zellij setup --generate-auto-start zsh)"' >> ~/.zshrc
 if [[ -z "$ZELLIJ" ]]; then
   zellij attach $(hostname) || zellij -s $(hostname)
 fi
-#    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-#      zellij attach $(hostname)
-#    fi
-#
-#    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-#        exit
-#    fi
-#fi
 # }}}
 
 # check and source config files in order {{{
