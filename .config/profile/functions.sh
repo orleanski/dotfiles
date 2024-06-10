@@ -72,6 +72,11 @@ weather() {
   curl wttr.in/PGV
 }
 
+newtodo() {
+  echo "create and/or open for edit a new todo file w/ the current date as a file name"
+  vi `date -I`.todo
+}
+
 extract() {
     local c e i
 
